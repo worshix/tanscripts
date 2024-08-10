@@ -24,3 +24,10 @@
   background-size: cover;
 }
 
+
+@media (max-width: 640px) {
+  .hero {
+      background-image: url('/assets/munax2.jpg');
+      }
+  }
+
