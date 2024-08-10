@@ -3,26 +3,26 @@ import Link from "next/link";
 const navItems = [
     {
         name:'Engineering',
-        link:'#'
+        link:'engineering'
     },
     {
         name:'Training',
-        link:'#'
+        link:'training'
     },
     {
         name:'Contacts',
-        link:'#'
+        link:'contacts'
     },    
 ]
 function Navbar(){
     
     return (
         <header className="overflow-hidden">
-            <nav className="text-white font-bold gap-2 flex">
-                <Link href='/' className="mr-auto p-2 tan block">Tanscripts Engineering</Link>
+            <nav className="font-bold gap-2 flex">
+                <Link href='/' className="mr-auto p-2 block">Tanscripts Engineering</Link>
                 {navItems.map((item) => <Link
                     href={item.link}
-                    className='overflow-x-hidden p-2 w-fit before:w-[60px] before:h-[3px] before:absolute before:bg-white before:top-[30px] block before:scale-x-0 hover:before:-scale-x-100 before:transition-transform before:duration-300 before:ease-linear before:origin-center before:block'>
+                    className='overflow-x-hidden p-2 w-fit block before:scale-x-0'>
                     {item.name}
                     </Link>
                 )}

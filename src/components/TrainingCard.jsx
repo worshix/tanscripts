@@ -1,6 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import Link from "next/link";
 
 export default function TrainingCard(prop){
     //takes in an argument with the props
@@ -11,7 +9,7 @@ export default function TrainingCard(prop){
             <div className="w-[300px] h-[100px] bg-main-300"></div>
             <div className="p-1 bg-main-300 w-fit rounded-full mx-auto relative -mt-[50px]"><div className="bg-white h-[90px] w-[90px] rounded-full flex justify-center items-center"><i className="block bi bi-mortarboard text-slate-500 text-5xl"></i></div></div>
             <h1 className="font-bold text-center">{title}</h1>
-            <Link className="block w-fit grad p-2 my-4 rounded-full text-white font-bold m-2 mb-auto" to='/Contacts'>Begin Training</Link>
+            <Link className="block w-fit grad p-2 my-4 rounded-full text-white font-bold m-2 mb-auto" href='/Contacts'>Begin Training</Link>
             <ul className="pl-6 p-2 list-disc mb-auto">
                 {details.map((item) => (<li>{item}</li>))}
             </ul>

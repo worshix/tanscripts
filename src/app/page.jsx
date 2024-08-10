@@ -61,22 +61,20 @@ export default function Home() {
     } 
     return (
         <>
-            <section className="pt-6 w-full text-white overflow-x-hidden z-2">
-                <article className="hero mt-0 md:mt-6 -translate-x-96 opacity-0 overflow-x-hidden h-fit overflow-y-hidden">
-                    <h1 className="sm:text-4xl font-extrabold text-center">Unlocking industrial automation potential</h1>
-                    <h1 className="sm:text-2xl font-bold text-center">while</h1>
-                    <h1 className="sm:text-4xl font-extrabold text-center" >Training the next generation</h1>
-                    <p className="font-bold sm:text-lg text-xs text-main-50 text-center my-2">where embedded systems meet industrial strength</p>
-                    <div className="buttons flex flex-row mt-4 gap-2 justify-center">
-                        <Link href='/contacts' className="hover:scale-110 hero-btn opacity-0 bg-sky-500 p-2 font-bold m-2 rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
-                        <Link href='/contacts' className="hover:scale-110 hero-btn opacity-0 bg-orange-400 p-2 font-bold m-2 rounded-lg block w-fit">Start Training</Link>
-                    </div>
-                </article>
+            <section className="hero pt-6 w-full overflow-x-hidden h-screen">
+                <h1 className="sm:text-4xl font-extrabold text-center">Unlocking industrial automation potential</h1>
+                <h1 className="sm:text-2xl font-bold text-center">while</h1>
+                <h1 className="sm:text-4xl font-extrabold text-center" >Training the next generation</h1>
+                <p className="font-bold sm:text-lg text-xs text-main-50 text-center my-2">where embedded systems meet industrial strength</p>
+                <div className="buttons flex flex-row mt-4 gap-2 justify-center">
+                    <Link href='/contacts' className="hover:scale-110 hero-btn bg-sky-500 p-2 font-bold m-2 rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
+                    <Link href='/contacts' className="hover:scale-110 hero-btn bg-orange-400 p-2 font-bold m-2 rounded-lg block w-fit">Start Training</Link>
+                </div>
+            </section>
                 <article className="services flex flex-col gap-4 justify-center mt-2 md:flex-row md:mt-4 mb-4 overflow-x-hidden">
                 <Card service = {service1} />
                 <Card service = {service2} />
                 </article>
-            </section>
         </>
     )
 }
