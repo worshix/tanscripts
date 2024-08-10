@@ -1,6 +1,8 @@
 import Card from '@/components/Card';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
+const HomePageAnime = dynamic(() => import('./HomePageAnime'), { ssr: false });
 
 export default function Home() {
     const service1 = {
@@ -10,20 +12,20 @@ export default function Home() {
             {
                 title:'Industrial Automation',
                 details:[
-                    'Designing, development, implementation and maintanance of customised manufacturing and industrial systems',
+                    'Designing, development, implementation and maintenance of customized manufacturing and industrial systems',
                     'Plant upgrades'
                 ]
             },
             {
                 title:'Embedded Systems',
                 details:[
-                    'Microcontrollers and IoT based solutions including the respectie hardware, firmware and maintanace support',
+                    'Microcontrollers and IoT based solutions including the respective hardware, firmware, and maintenance support',
                 ]
             },
             {
                 title:'Electrification',
                 details:[
-                    'Industial ELectrification',
+                    'Industrial Electrification',
                     'Domestic Electrification',
                     'Solar Installation'
                 ]
@@ -45,7 +47,7 @@ export default function Home() {
             {
                 title:'Embedded Systems',
                 details:[
-                    'Embedded Progrmming',
+                    'Embedded Programming',
                     'Hardware development (Schematic design, PCB design)'
                 ]
             },
@@ -53,7 +55,7 @@ export default function Home() {
                 title:'Electrification',
                 details:[
                     'Phototronic systems design',
-                    'Photronic systems installation'
+                    'Phototronic systems installation'
                 ]
             }
         ],
@@ -61,20 +63,17 @@ export default function Home() {
     } 
     return (
         <main>
-            <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white">
-                <h1 className="sm:text-4xl font-extrabold text-center">Unlocking industrial automation potential</h1>
-                <h1 className="sm:text-2xl font-bold text-center">while</h1>
-                <h1 className="sm:text-4xl font-extrabold text-center" >Training the next generation</h1>
-                <p className="font-bold sm:text-lg text-xs text-main-50 text-center my-2">where embedded systems meet industrial strength</p>
-                <div className="buttons flex flex-row mt-4 gap-2 justify-center">
-                    <Link href='/contacts' className="hover:scale-110 hero-btn bg-sky-500 p-2 font-bold m-2 rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
-                    <Link href='/contacts' className="hover:scale-110 hero-btn bg-orange-400 p-2 font-bold m-2 rounded-lg block w-fit">Start Training</Link>
+            <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center">
+                <h1 className="hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</h1>
+                <h1 className="hero-text-2 text-2xl sm:text-3xl font-bold text-center hero-font mb-2">While</h1>
+                <h1 className="hero-text-3 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-4">Training the Next Generation</h1>
+                <p className="motto font-bold text-lg sm:text-xl text-white text-center mb-6">Where Embedded Systems Meet Industrial Strength</p>
+                <div className="buttons flex flex-row gap-4 justify-center py-10">
+                    <Link href='/contacts' className="call-btn-left hover:scale-110 transition-transform duration-200 bg-sky-500 p-3 font-bold rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
+                    <Link href='/contacts' className="call-btn-right hover:scale-110 transition-transform duration-200 bg-orange-400 p-3 font-bold rounded-lg block w-fit">Start Training</Link>
                 </div>
             </section>
-                <article className="services flex flex-col gap-4 justify-center mt-2 md:flex-row md:mt-4 mb-4 overflow-x-hidden">
-                <Card service = {service1} />
-                <Card service = {service2} />
-                </article>
+            <HomePageAnime />
         </main>
     )
 }
