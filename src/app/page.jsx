@@ -1,6 +1,7 @@
 import Card from '@/components/Card';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import ContactForm from '@/components/ContactForm'
 
 const HomePageAnime = dynamic(() => import('./HomePageAnime'), { ssr: false });
 const BasicAnimations = dynamic(() => import('./../components/BasicAnimations'), { ssr: false });
@@ -104,6 +105,7 @@ const service2 = {
 export default function Home() {
     return (
         <main>
+            {/* hero */}
             <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center">
                 <h1 className="hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</h1>
                 <h1 className="hero-text-2 text-2xl sm:text-3xl font-bold text-center hero-font mb-2">While</h1>
@@ -114,19 +116,37 @@ export default function Home() {
                     <Link href='/contacts' className="call-btn-right hover:scale-110 transition-transform ease-linear duration-200 bg-orange-400 p-3 font-bold rounded-lg block w-fit">Start Training</Link>
                 </div>
             </section>
+
+            {/* services overview */}
             <section className="landing-services">
                 <Card {...service1} />
                 <Card {...service2} />
             </section>
-            <section>
+
+            {/* latest posts */}
+            <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Latest Activities</h1>
+            <section className="latest-stuff">
+                <artcile className="latest-images">
+                    {/* Latest images in here, just 5 is enough */}
+                </artcile>
+                <artcile className="latest-videos">
+                    {/* Latest videos in here, just 3 is enough */}
+                </artcile>
+            </section>
+
+            {/*  */}
+
+            {/* contacts and form */}
+            <section className="p-2">
                 <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Contact Us</h1>
                 <article className='the-contacts flex flex-col gap-2 sm:flex-row flex-wrap justify-center'>
                         {contacts.map((item) => {
                             return(
-                                <Link href={item.link} id={item.id} className='flex flex-shrink-0 bg-main-300 bg-opacity-10 w-[300px] mx-auto sm:mx-0 shadow-md sm:w-1/3'><i className={`bi-${item.bootstrapIcon} p-2 bg-white col-${item.bootstrapIcon} rounded-r-md text-lg bg-opacity-15 block`}></i><div className='flex flex-col justify-center items-center w-4/5'><h2 className='font-bold'>{item.name}</h2>{item.details}<h2></h2></div></Link>
+                                <Link href={item.link} id={item.id} key={item.id} className='flex flex-shrink-0 bg-main-300 bg-opacity-10 w-[300px] mx-auto sm:mx-0 shadow-md sm:w-1/3'><i className={`bi-${item.bootstrapIcon} p-2 bg-white col-${item.bootstrapIcon} rounded-r-md text-lg bg-opacity-15 block`}></i><div className='flex flex-col justify-center items-center w-4/5'><h2 className='font-bold'>{item.name}</h2>{item.details}<h2></h2></div></Link>
                             )
                         })}
                 </article>
+                <ContactForm />
             </section>
             <HomePageAnime />
             <BasicAnimations />

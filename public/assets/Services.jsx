@@ -4,7 +4,7 @@ export default {
         {
             id:'ia-1',
             title:'Customized Production Automation',
-            image:'banner.png',
+            image:'service1.jpg',
             alt:'',
             description:'We design and develop tailored automation solutions that meet the unique needs of our clients. Our expertise includes',
             details:[
@@ -16,7 +16,7 @@ export default {
         {
             id:'ia-2',
             title:'Plant Design & Maintanance',
-            image:'brochure.jpg',
+            image:'service2.jpg',
             alt:'',
             description:'Our team designs and implements comprehensive plant designs that optimize efficiency, productivity, and safety. Services include:',
             details:[
@@ -28,7 +28,7 @@ export default {
         {
             id:'ia-3',
             title:'Plant Upgrade',
-            image:'banner.png',
+            image:'automation.jpg',
             alt:'',
             description:'Our team upgrades existing plants to improve performance, efficiency, and safety. Services include:',
             details:[
@@ -42,7 +42,7 @@ export default {
         {
             id:'es-1',
             title:'Hardware Design and Development',
-            image:'banner.png',
+            image:'training.jpg',
             description:'We design and develop tailored embedded systems that meet the specific requirements of our clients. Our expertise includes:',
             details:[
                 'Designing of embedded hardware including microcontrollers sensors, actuators and supporting circuitry',
@@ -52,7 +52,7 @@ export default {
         {
             id:'es-2',
             title:'Embedded Software Engineering',
-            image:'billboard.png',
+            image:'service4.jpg',
             description:'We develop customized software solutions for embedded systems, including:',
             details:[
                 'Development of loe level firmware and software that runs on the embedded hardware',
@@ -62,7 +62,7 @@ export default {
         {
             id:'es-3',
             title:'System Integration and Validation',
-            image:'brochure.jpg',
+            image:'service3.jpg',
             description:'Our team integrates hardware and software components to create a seamless embedded system. Services include:',
             details:[
                 'Complete embedded system integration and validation of perfomance and functionality',
