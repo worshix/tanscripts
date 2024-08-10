@@ -60,7 +60,7 @@ export default function Home() {
         icon:'code-slash'
     } 
     return (
-        <>
+        <main>
             <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white">
                 <h1 className="sm:text-4xl font-extrabold text-center">Unlocking industrial automation potential</h1>
                 <h1 className="sm:text-2xl font-bold text-center">while</h1>
@@ -75,6 +75,6 @@ export default function Home() {
                 <Card service = {service1} />
                 <Card service = {service2} />
                 </article>
-        </>
+        </main>
     )
 }

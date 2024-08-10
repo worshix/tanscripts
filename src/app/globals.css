@@ -3,7 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global */
+.roboto {
+  font-family: 'Roboto','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* Navbar */
+.selected{
+  @apply text-main2;
+}
+
+.sidebar-active{
+  @apply scale-y-100;
+}
 
 /* Home Page */
 
@@ -13,3 +25,4 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
