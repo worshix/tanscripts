@@ -61,7 +61,7 @@ export default function Home() {
     } 
     return (
         <>
-            <section className="hero pt-6 w-full overflow-x-hidden h-screen">
+            <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white">
                 <h1 className="sm:text-4xl font-extrabold text-center">Unlocking industrial automation potential</h1>
                 <h1 className="sm:text-2xl font-bold text-center">while</h1>
                 <h1 className="sm:text-4xl font-extrabold text-center" >Training the next generation</h1>
