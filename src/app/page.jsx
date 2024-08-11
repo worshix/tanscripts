@@ -1,7 +1,10 @@
 import Card from '@/components/Card';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import ContactForm from '@/components/ContactForm'
+import ContactForm from '@/components/ContactForm';
+import Gallery from '@/components/Gallery';
+import testImages  from './../../public/Images';
+import VideoGallery from '@/components/VideoGallery';
 
 const HomePageAnime = dynamic(() => import('./HomePageAnime'), { ssr: false });
 const BasicAnimations = dynamic(() => import('./../components/BasicAnimations'), { ssr: false });
@@ -100,7 +103,15 @@ const service2 = {
         }
     ],
 } 
-
+//images to test the gallery
+const images =  testImages.slice(0,5)
+//tester videos
+const videos = [
+    { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This is video 1' },
+    { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This is video 2' },
+    { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This is video 3' },
+    // Add more videos as needed
+];
 
 export default function Home() {
     return (
@@ -126,11 +137,15 @@ export default function Home() {
             {/* latest posts */}
             <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Latest Activities</h1>
             <section className="latest-stuff">
+                <h1 className="text-lg text-main2 text-center font-bold">images</h1>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
+                    <Gallery images = {images} />
                 </artcile>
+                <h1 className="text-lg text-main2 text-center font-bold">Videos</h1>
                 <artcile className="latest-videos">
                     {/* Latest videos in here, just 3 is enough */}
+                    <VideoGallery videos={videos} />;
                 </artcile>
             </section>
 
