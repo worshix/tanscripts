@@ -157,7 +157,7 @@ export default function Home() {
                 <article className='the-contacts flex flex-col gap-2 sm:flex-row flex-wrap justify-center'>
                         {contacts.map((item) => {
                             return(
-                                <Link href={item.link} id={item.id} key={item.id} className='flex flex-shrink-0 bg-main-300 bg-opacity-10 w-[300px] mx-auto sm:mx-0 shadow-md sm:w-1/3'><i className={`bi-${item.bootstrapIcon} p-2 bg-white col-${item.bootstrapIcon} rounded-r-md text-lg bg-opacity-15 block`}></i><div className='flex flex-col justify-center items-center w-4/5'><h2 className='font-bold'>{item.name}</h2>{item.details}<h2></h2></div></Link>
+                                <Link href={item.link} id={item.id} key={item.id} className='flex flex-shrink-0 bg-main-300 bg-opacity-10 w-[300px] mx-auto sm:mx-0 shadow-md sm:w-1/3 slide-in-left'><i className={`bi-${item.bootstrapIcon} p-2 bg-white col-${item.bootstrapIcon} rounded-r-md text-lg bg-opacity-15 block`}></i><div className='flex flex-col justify-center items-center w-4/5'><h2 className='font-bold'>{item.name}</h2>{item.details}<h2></h2></div></Link>
                             )
                         })}
                 </article>

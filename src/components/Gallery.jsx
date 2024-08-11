@@ -4,7 +4,7 @@ function Gallery({ images }) {
     return (
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
             {images.map((image, index) => (
-                <div key={"image-"+index} className="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-md">
+                <div key={"image-"+index} className="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-md slide-in-left">
                     <div className="w-full h-64 relative">
                         <Image
                             src={image.src}
