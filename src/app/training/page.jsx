@@ -1,9 +1,18 @@
 import TrainingCard from "@/components/TrainingCard";
 import Services from "../../../public/assets/Services";
 import dynamic from "next/dynamic";
+import Gallery from "@/components/Gallery";
+import VideoGallery from "@/components/VideoGallery";
+import images from './../../../public/Images'
+
 
 const BasicAnimations = dynamic(() => import('./../../components/BasicAnimations'), { ssr: false });
-
+const videos = [
+    { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
+    { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
+    { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
+    // Add more videos as needed
+];
 function Training(){
     return(
         <main>
@@ -45,6 +54,16 @@ function Training(){
             {/* all posts to do with training services */}
             <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Activities</h1>
             <section className="training-services">
+            <h1 className="text-xl text-main2 text-center font-bold">Training Images</h1>
+                <artcile className="latest-images">
+                    {/* Latest images in here, just 5 is enough */}
+                    <Gallery images = {images} />
+                </artcile>
+                <h1 className="text-xl text-main2 text-center font-bold">Training Videos</h1>
+                <artcile className="latest-videos">
+                    {/* Latest videos in here, just 3 is enough */}
+                    <VideoGallery videos={videos} />;
+                </artcile>
 
             </section>
 

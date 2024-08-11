@@ -107,9 +107,9 @@ const service2 = {
 const images =  testImages.slice(0,5)
 //tester videos
 const videos = [
-    { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This is video 1' },
-    { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This is video 2' },
-    { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This is video 3' },
+    { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
+    { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
+    { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
     // Add more videos as needed
 ];
 

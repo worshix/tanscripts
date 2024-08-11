@@ -14,7 +14,8 @@ const testimonials = [
                 label:'email',
                 href:'mailto:pixelcraftewt@gmail.com'
             },
-        ]
+        ],
+        testimony:'Worst Engineers ever. They deserve to be hanged for this. They made everything worse'
     },
     {
         image:'/assets/client-image.jpeg',
@@ -31,7 +32,8 @@ const testimonials = [
                 label:'email',
                 href:'mailto:pixelcraftewt@gmail.com'
             },
-        ]
+        ],
+        testimony:'Worst Engineers ever. They deserve to be hanged for this. They made everything worse'
     },
 ]
 
