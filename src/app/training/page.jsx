@@ -5,11 +5,11 @@ function Training(){
     return(
         <>
         <section>
-        <h1 className="text-orange-400 text-center text-xl font-bold mt-4 mb-2 sidebar -translate-x-40 opacity-0 my-4">Training</h1>
-        <article className="flex justify-center flex-col gap-2 sm:flex-row flex-wrap hero -translate-x-40 opacity-0 mt-4">
+        <h1 className="text-orange-400 text-center text-xl font-bold mt-4 mb-2 my-4">Training</h1>
+        <article className="flex justify-center flex-col gap-2 sm:flex-row flex-wrap mt-4">
                 {Services.training.map((item) => <TrainingCard prop = {item}/>)}
             </article>
-            <article className="hero -translate-x-40 opacity-0 text-white mt-2 flex gap-2 flex-wrap">
+            <article className="text-white mt-2 flex gap-2 flex-wrap">
                 <div>
                     <h1 className="font-bold text-center">Training Methodology</h1>
                     <ul className="list-disc pl-6">
