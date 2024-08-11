@@ -7,11 +7,11 @@ function Engineering(){
             <section className="w-full overflow-x-hidden">
                 <h1 key='automation-header' className="text-orange-400 text-center text-xl font-bold my-4 md:text-2xl md:my-6">Industrial Automation</h1>
                 <article key='automation' className="w-full flex flex-col flex-wrap gap-2 sm:flex-row justify-center">
-                    { Services.industrialAutomation.map((item) => <ServiceCard prop = {item} />) }
+                    { Services.industrialAutomation.map((item) => <ServiceCard key={item.id} prop = {item} />) }
                 </article>
                 <h1 key='embedded-header' className="text-orange-400 text-center text-xl font-bold mt-4 mb-2">Embedded Systems</h1>
                 <article key='embedded' className="w-full flex flex-col flex-wrap gap-2 sm:flex-row justify-center">
-                    { Services.embeddedSystems.map((item) => <ServiceCard prop = {item} />) }
+                    { Services.embeddedSystems.map((item) => <ServiceCard key={item.id} prop = {item} />) }
                 </article>
                 <h1 key='other-header' className="text-orange-400 text-center text-xl font-bold mt-4 mb-2">Other Services</h1>
                 <article key='other' className="w-full">
