@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { PrismicNextImage } from '@prismicio/next';
 
 function Gallery({ images }) {
     return (
@@ -6,15 +7,13 @@ function Gallery({ images }) {
             {images.map((image, index) => (
                 <div key={"image-"+index} className="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-md slide-in-left">
                     <div className="w-full h-64 relative">
-                        <Image
-                            src={image.src}
-                            alt={image.alt}
-                            layout="fill"
+                        <PrismicNextImage
+                            field={image.data.image}
                             objectFit="contain"
                             className="h-full w-auto transition-transform hover:scale-110 duration-300 ease-linear"
                         />
                     </div>
-                    <p className="p-4 text-center text-main-300 font-semibold">{image.description}</p>
+                    <p className="p-4 text-center text-main-300 font-semibold">{image.data.description}</p>
                 </div>
             ))}
         </section>

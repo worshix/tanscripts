@@ -4,12 +4,11 @@ function VideoGallery({ videos }) {
             {videos.map((video, index) => (
                 <div key={index} className="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-md">
                     <div className="w-full h-64 relative">
-                        <video controls className="h-full w-auto mx-auto">
-                            <source src={video.src} type={video.type} />
-                            Your browser does not support the video tag.
-                        </video>
+		    	<div className="h-full w-auto mx-auto"
+  				dangerouslySetInnerHTML={{ __html: video.data.video.html }}
+			/>
                     </div>
-                    <p className="p-4 text-center text-main-300 font-semibold">{video.description}</p>
+                    <p className="p-4 text-center text-main-300 font-semibold">{video.data.description}</p>
                 </div>
             ))}
         </section>
@@ -17,3 +16,7 @@ function VideoGallery({ videos }) {
 }
 
 export default VideoGallery;
+/**<video controls className="h-full w-auto mx-auto">
+                            <source src={video.src} type={video.type} />
+                            Your browser does not support the video tag.
+                        </video>*/

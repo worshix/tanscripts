@@ -1,0 +1,39 @@
+{
+  "format": "custom",
+  "id": "image",
+  "label": "Image",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "publishing_date": {
+        "type": "Date",
+        "config": {
+          "label": "Publishing date",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

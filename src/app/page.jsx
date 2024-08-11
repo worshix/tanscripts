@@ -5,6 +5,10 @@ import ContactForm from '@/components/ContactForm';
 import Gallery from '@/components/Gallery';
 import testImages  from './../../public/Images';
 import VideoGallery from '@/components/VideoGallery';
+import { createClient } from '@/prismicio';
+import { PrismicNextImage } from '@prismicio/next';
+
+const client = createClient();
 
 const HomePageAnime = dynamic(() => import('./HomePageAnime'), { ssr: false });
 const BasicAnimations = dynamic(() => import('./../components/BasicAnimations'), { ssr: false });
@@ -104,16 +108,23 @@ const service2 = {
     ],
 } 
 //images to test the gallery
-const images =  testImages.slice(0,5)
-//tester videos
+//const images =  testImages.slice(0,5)
+
+/**tester videos
 const videos = [
     { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
     { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
     { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
     // Add more videos as needed
 ];
+*/
+//const videos = client.getAllByType('video');
 
-export default function Home() {
+
+export default async function Home() {
+    const images = await client.getAllByType('image');
+    const videos = await client.getAllByType('video');
+    console.log(images)
     return (
         <main>
             {/* hero */}

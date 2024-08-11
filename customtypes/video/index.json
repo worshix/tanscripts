@@ -1,0 +1,38 @@
+{
+  "format": "custom",
+  "id": "video",
+  "label": "Video",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "video": {
+        "type": "Embed",
+        "config": {
+          "label": "Video",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "publishing_date": {
+        "type": "Date",
+        "config": {
+          "label": "Publishing date",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
