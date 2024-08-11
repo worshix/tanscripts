@@ -69,6 +69,28 @@ const BasicAnimations = () => {
     });
   });
 
+  useGSAP(() => {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    const SlideInBottom = document.querySelectorAll('.slide-in-bottom');
+    SlideInBottom.forEach((slide) => {
+      gsap.fromTo(slide, 
+        { opacity: 0, y: 30 }, 
+        {
+          opacity: 1,
+          y: 0,
+          duration: .6,
+          scrollTrigger: {
+            trigger: slide,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+  });
+
   return null; // This component doesn't render anything visible
 };
 
