@@ -3,64 +3,105 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const HomePageAnime = dynamic(() => import('./HomePageAnime'), { ssr: false });
+const BasicAnimations = dynamic(() => import('./../components/BasicAnimations'), { ssr: false });
+const contacts = [
+    {
+        id:'contact-1',
+        name:'WhatsApp',
+        link:'https://wa.me/263713664345',
+        bootstrapIcon:'whatsapp',
+        details:'(263) 713 664 345',
+    },    
+    {
+        id:'contact-2',
+        name:'facebook',
+        link:'#',
+        bootstrapIcon:'facebook',
+        details:'page_name',
+    },
+    {
+        id:'contact-3',
+        name:'instagram',
+        link:'#',
+        bootstrapIcon:'instagram',
+        details:'insta user name',
+    },
+    {
+        id:'contact-4',
+        name:'E-Mail',
+        link:'#',
+        bootstrapIcon:'envelope',
+        details:'tandzapa@gmail.com',
+    },
+    {
+        id:'contact-5',
+        name:'Mobile',
+        link:'tel:+263713664345',
+        bootstrapIcon:'phone',
+        details:'(263) 713664345'
+    }
+]
+const service1 = {
+    title:'Engineering Services',
+    route:'/engineering',
+    image:'automation.jpg',
+    alt:"industrial automation",
+    details:[
+        {
+            title:'Industrial Automation',
+            details:[
+                'Designing, development, implementation and maintenance of customized manufacturing and industrial systems',
+                'Plant upgrades'
+            ]
+        },
+        {
+            title:'Embedded Systems',
+            details:[
+                'Microcontrollers and IoT based solutions including the respective hardware, firmware, and maintenance support',
+            ]
+        },
+        {
+            title:'Electrification',
+            details:[
+                'Industrial Electrification',
+                'Domestic Electrification',
+                'Solar Installation'
+            ]
+        }
+    ],
+} 
+const service2 = {
+    title:'Training',
+    route:'/training',
+    image:'training.jpg',
+    alt:"engineering training",
+    details:[
+        {
+            title:'Industrial Automation',
+            details:[
+                'Programmable Logic Controller(PLC) (Unitronics, Mitsubishi, Siemens, Codmay)',
+                'SCADA'
+            ]
+        },
+        {
+            title:'Embedded Systems',
+            details:[
+                'Embedded Programming',
+                'Hardware development (Schematic design, PCB design)'
+            ]
+        },
+        {
+            title:'Electrification',
+            details:[
+                'Phototronic systems design',
+                'Phototronic systems installation'
+            ]
+        }
+    ],
+} 
+
 
 export default function Home() {
-    const service1 = {
-        title:'Engineering Services',
-        route:'/engineering',
-        details:[
-            {
-                title:'Industrial Automation',
-                details:[
-                    'Designing, development, implementation and maintenance of customized manufacturing and industrial systems',
-                    'Plant upgrades'
-                ]
-            },
-            {
-                title:'Embedded Systems',
-                details:[
-                    'Microcontrollers and IoT based solutions including the respective hardware, firmware, and maintenance support',
-                ]
-            },
-            {
-                title:'Electrification',
-                details:[
-                    'Industrial Electrification',
-                    'Domestic Electrification',
-                    'Solar Installation'
-                ]
-            }
-        ],
-        icon:'wrench'
-    } 
-    const service2 = {
-        title:'Training',
-        route:'/training',
-        details:[
-            {
-                title:'Industrial Automation',
-                details:[
-                    'Programmable Logic Controller(PLC) (Unitronics, Mitsubishi, Siemens, Codmay, SCADA)',
-                    'SCADA'
-                ]
-            },
-            {
-                title:'Embedded Systems',
-                details:[
-                    'Embedded Programming',
-                    'Hardware development (Schematic design, PCB design)'
-                ]
-            },
-            {
-                title:'Electrification',
-                details:[
-                    'Phototronic systems design',
-                    'Phototronic systems installation'
-                ]
-            }
-        ],
-        icon:'code-slash'
-    } 
     return (
         <main>
             <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center">
@@ -77,7 +118,18 @@ export default function Home() {
                 <Card {...service1} />
                 <Card {...service2} />
             </section>
+            <section>
+                <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Contact Us</h1>
+                <article className='the-contacts flex flex-col gap-2 sm:flex-row flex-wrap justify-center'>
+                        {contacts.map((item) => {
+                            return(
+                                <Link href={item.link} id={item.id} className='flex flex-shrink-0 bg-main-300 bg-opacity-10 w-[300px] mx-auto sm:mx-0 shadow-md sm:w-1/3'><i className={`bi-${item.bootstrapIcon} p-2 bg-white col-${item.bootstrapIcon} rounded-r-md text-lg bg-opacity-15 block`}></i><div className='flex flex-col justify-center items-center w-4/5'><h2 className='font-bold'>{item.name}</h2>{item.details}<h2></h2></div></Link>
+                            )
+                        })}
+                </article>
+            </section>
             <HomePageAnime />
+            <BasicAnimations />
         </main>
     )
 }

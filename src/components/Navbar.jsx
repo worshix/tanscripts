@@ -12,10 +12,6 @@ const links = [
         name:"Training",
         link:'/training'
     },
-    {
-        name:"Contacts",
-        link:'/contacts'
-    },
 ]
 
 const Navbar = () => {
