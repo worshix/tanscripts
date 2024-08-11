@@ -17,7 +17,6 @@ function Testimonial({ clients }) {
                     </div>
                     <h3 className="text-xl font-semibold text-main-300 mb-2">{client.name}</h3>
                     <p className="text-sm text-gray-500 mb-2">{client.jobTitle} at {client.company}</p>
-                    <p className="text-sm text-gray-500 mb-4">{client.contactDetails}</p>
                     <div className="flex space-x-4 mb-4">
                         {client.links.map((link, idx) => (
                             <Link key={idx} href={link.href}

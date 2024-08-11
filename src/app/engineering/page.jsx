@@ -3,7 +3,10 @@ import Services from "../../../public/assets/Services";
 import dynamic from "next/dynamic";
 import Gallery from "@/components/Gallery";
 import VideoGallery from "@/components/VideoGallery";
-import images from './../../../public/Images'
+import images from './../../../public/Images';
+import Testimonial from "@/components/Testimonial";
+import testimonials from "../../../public/assets/testimonials";
+
 
 const BasicAnimations = dynamic(() => import('./../../components/BasicAnimations'), { ssr: false });
 const videos = [
@@ -51,9 +54,7 @@ function Engineering(){
 
             {/* testimonials for engineering services */}
             <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Testimonials</h1>
-            <section className="engineering-testimonials">
-
-            </section>
+                <Testimonial clients={testimonials}/>
             <BasicAnimations />
         </main>
     )

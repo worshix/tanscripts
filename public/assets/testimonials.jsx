@@ -4,7 +4,6 @@ const testimonials = [
         name:'Worshishi the Great',
         company:'pixelCrafte',
         jobTitle:'FrontEnd Developer',
-        contactDetails:'Mondibata pamhepo chete',
         links:[
             {
                 label:'phone',
@@ -22,7 +21,6 @@ const testimonials = [
         name:'Worshan\'a',
         company:'Meddes',
         jobTitle:'Communications Engineer',
-        contactDetails:'Mondibata ku office',
         links:[
             {
                 label:'phone',
