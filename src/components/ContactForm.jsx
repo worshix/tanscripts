@@ -1,53 +1,66 @@
-import React, { useState } from 'react';
+'use client';
+import { useState } from 'react';
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+function SubscribeForm() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission (send an email)  TO DO
-    console.log('Hooray!! We have received your message. We will get back to you soon');
-  };
+        if (!name || !email) {
+            setError('Please fill in all fields.');
+            return;
+        }
 
-  return (
-    <form onSubmit={handleSubmit} className='flex flex-col p-2 bg-main-800 rounded-md m-2 gap-2 w-[350px] mx-auto sm:w-[400px] md:w-[500px]'>
-      <h1 className='font-bold py-2'>Send Message</h1>
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        value={formData.name}
-        onChange={handleChange}
-        className='bg-white bg-opacity-15 text-white rounded-md p-2'
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        value={formData.email}
-        onChange={handleChange}
-        className='bg-white bg-opacity-15 text-white rounded-md p-2'
-      />
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        value={formData.message}
-        onChange={handleChange}
-        className='bg-white bg-opacity-15 text-white rounded-md p-2'
-      />
-      <button type="submit" className='block bg-white text-main-800 font-bold w-fit p-2 rounded-md ml-auto mr-4 hover:scale-110 transition-transform duration-300'>Send</button>
-    </form>
-  );
-};
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError('Please enter a valid email address.');
+            return;
+        }
 
-export default ContactForm;
+        setError('');
+        // Handle successful form submission
+        console.log('Form submitted:', { name, email });
+    };
 
+    return (
+        <article className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md w-full sm:w-1/2 mx-auto m-4">
+            <h2 className="font-bold text-main-300 text-2xl mb-4">Subscribe for updates</h2>
+            <form onSubmit={handleSubmit} className="w-full">
+                {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+                <div className="mb-4">
+                    <label className="block text-main-300 font-bold mb-2" htmlFor="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-main-300"
+                        placeholder="Enter your name"
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-main-300 font-bold mb-2" htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-main-300"
+                        placeholder="Enter your email"
+                    />
+                </div>
+                <button
+                    type="submit"
+                    className="w-full bg-main-300 text-white font-bold py-2 px-4 rounded-lg hover:bg-main2"
+                >
+                    Subscribe
+                </button>
+            </form>
+        </article>
+    );
+}
+
+export default SubscribeForm;
