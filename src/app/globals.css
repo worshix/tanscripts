@@ -29,3 +29,7 @@
       background-image: url('/assets/munax2.jpg');
       }
   }
+
+  ul li::marker {
+    color: #ff6347; /* Tomato color */
+}
