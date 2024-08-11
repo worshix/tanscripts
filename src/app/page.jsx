@@ -146,10 +146,9 @@ export default function Home() {
                 <artcile className="latest-videos">
                     {/* Latest videos in here, just 3 is enough */}
                     <VideoGallery videos={videos} />;
+                    <a id="contact-us"></a>
                 </artcile>
             </section>
-
-            {/*  */}
 
             {/* contacts and form */}
             <section className="p-2">

@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 /* Global */
+* {
+  scroll-behavior: smooth;
+}
 
 /* Navbar */
 .selected{

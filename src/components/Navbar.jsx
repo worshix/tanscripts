@@ -12,6 +12,10 @@ const links = [
         name:"Training",
         link:'/training'
     },
+    {
+        name:"Contact Us",
+        link:'/#contact-us'
+    },
 ]
 
 const Navbar = () => {
