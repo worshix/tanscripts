@@ -124,7 +124,7 @@ const videos = [
 export default async function Home() {
     const images = await client.getAllByType('image');
     const videos = await client.getAllByType('video');
-    console.log(images)
+    console.log(images);
     return (
         <main>
             {/* hero */}

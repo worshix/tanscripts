@@ -3,19 +3,23 @@ import Services from "../../../public/assets/Services";
 import dynamic from "next/dynamic";
 import Gallery from "@/components/Gallery";
 import VideoGallery from "@/components/VideoGallery";
-import images from './../../../public/Images';
+//import images from './../../../public/Images';
 import Testimonial from "@/components/Testimonial";
 import testimonials from "../../../public/assets/testimonials";
+import { createClient } from '@/prismicio';
 
 
 const BasicAnimations = dynamic(() => import('./../../components/BasicAnimations'), { ssr: false });
-const videos = [
+/*const videos = [
     { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
     { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
     { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
     // Add more videos as needed
-];
-function Training(){
+];*/
+async function Training(){
+    const client = createClient();
+    const videos = await client.getAllByType('video');
+    const images = await client.getAllByType('image');
     return(
         <main>
         <section>
