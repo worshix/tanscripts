@@ -30,11 +30,11 @@ async function Engineering(){
         <main>
             <section className="w-full overflow-x-hidden">
                 <h1 key='automation-header' className="text-orange-400 text-center text-xl font-bold my-4 md:text-2xl md:my-6 slide-in-top">Industrial Automation</h1>
-                <article key='automation' className="w-full flex flex-col flex-wrap gap-2 sm:flex-row justify-center">
+                <article key='automation' className="w-full flex flex-col flex-wrap gap-4 sm:flex-row justify-center">
                     { Services.industrialAutomation.map((item) => <ServiceCard key={item.id} prop = {item} />) }
                 </article>
                 <h1 key='automation-header' className="text-orange-400 text-center text-xl font-bold my-4 md:text-2xl md:my-6 slide-in-top">Embedded Systems</h1>
-                <article key='embedded' className="w-full flex flex-col flex-wrap gap-2 sm:flex-row justify-center">
+                <article key='embedded' className="w-full flex flex-col flex-wrap gap-4 sm:flex-row justify-center">
                     { Services.embeddedSystems.map((item) => <ServiceCard key={item.id} prop = {item} />) }
                 </article>
                 <h1 key='automation-header' className="text-orange-400 text-center text-xl font-bold my-4 md:text-2xl md:my-6 slide-in-top">Other Services</h1>
