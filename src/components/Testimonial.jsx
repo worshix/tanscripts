@@ -19,8 +19,8 @@ async function Testimonial({ clients }) {
                         />
                     </div>
                     <h3 className="text-xl font-semibold text-main-300 mb-2">{client.data.full_name}</h3>
-                    <p className="text-sm text-gray-500 mb-2">{client.data.job_title} at {client.data.company}</p>
-                    <p className="text-center text-gray-700 font-light">{client.data.testimony}</p>
+                    <p className="text-sm text-gray-500 mb-2 font-bold">{client.data.job_title} at {client.data.company}</p>
+                    <p className="text-center text-gray-700 font-light"><i>&quot;{client.data.testimony}&quot;</i></p>
                 </div>
             ))}
         </section>
