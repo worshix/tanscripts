@@ -11,7 +11,7 @@ export default function TrainingCard(prop){
             <h1 className="font-bold text-center">{title}</h1>
             <Link className="block w-fit p-1 my-4 font-bold text-sm m-2 mb-auto underline underline-offset-1 text-orange-400" href='/Contacts'>Begin Training</Link>
             <ul className="pl-6 p-2 list-disc mb-auto">
-                {details.map((item) => (<li>{item}</li>))}
+                {details.map((item, index) => (<li key={"detail-item"+index}>{item}</li>))}
             </ul>
         </div>
         </>

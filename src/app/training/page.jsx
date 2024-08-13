@@ -18,7 +18,7 @@ async function Training(){
         <section>
         <h1 key='automation-header' className="text-orange-400 text-center text-xl font-bold my-4 md:text-2xl md:my-6 slide-in-top">Training</h1>
         <article className="flex justify-center flex-col gap-2 sm:flex-row flex-wrap mt-4 mb-8">
-                {Services.training.map((item) => <TrainingCard prop = {item}/>)}
+                {Services.training.map((item, index) => <TrainingCard key={"training-card"+index} prop = {item}/>)}
             </article>
             <article className="mt-6 flex gap-2 flex-wrap justify-center items-top sm:text-lg">
                 <div className="sm:w-[360px]">
