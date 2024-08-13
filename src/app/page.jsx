@@ -148,12 +148,12 @@ export default async function Home() {
             {/* latest posts */}
             <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Latest Activities</h1>
             <section className="latest-stuff">
-                <h1 className="text-lg text-main2 text-center font-bold">Images</h1>
+                <h1 className="text-lg text-main2 text-center font-bold sm:text-2xl">Images</h1>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
                     <Gallery images = {images} />
                 </artcile>
-                <h1 className="text-lg text-main2 text-center font-bold">Videos</h1>
+                <h1 className="text-lg text-main2 text-center font-bold sm:text-2xl">Videos</h1>
                 <artcile className="latest-videos">
                     {/* Latest videos in here, just 3 is enough */}
                     <VideoGallery videos={videos} />;

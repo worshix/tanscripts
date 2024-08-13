@@ -3,19 +3,12 @@ import Services from "../../../public/assets/Services";
 import dynamic from "next/dynamic";
 import Gallery from "@/components/Gallery";
 import VideoGallery from "@/components/VideoGallery";
-//import images from './../../../public/Images';
 import Testimonial from "@/components/Testimonial";
 import testimonials from "../../../public/assets/testimonials";
 import { createClient } from '@/prismicio';
 
 
 const BasicAnimations = dynamic(() => import('./../../components/BasicAnimations'), { ssr: false });
-/*const videos = [
-    { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
-    { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
-    { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
-    // Add more videos as needed
-];*/
 async function Training(){
     const client = createClient();
     const videos = await client.getAllByType('video');
@@ -24,11 +17,11 @@ async function Training(){
         <main>
         <section>
         <h1 key='automation-header' className="text-orange-400 text-center text-xl font-bold my-4 md:text-2xl md:my-6 slide-in-top">Training</h1>
-        <article className="flex justify-center flex-col gap-2 sm:flex-row flex-wrap mt-4">
+        <article className="flex justify-center flex-col gap-2 sm:flex-row flex-wrap mt-4 mb-8">
                 {Services.training.map((item) => <TrainingCard prop = {item}/>)}
             </article>
-            <article className=" mt-6 flex gap-2 flex-wrap justify-center space-y-6 items-top">
-                <div>
+            <article className="mt-6 flex gap-2 flex-wrap justify-center items-top sm:text-lg">
+                <div className="sm:w-[360px]">
                     <h1 className="text-orange-400 font-bold text-center slide-in-left">Training Methodology</h1>
                     <ul className="list-disc pl-6 slide-in-top">
                         <li>Theoretical lectures</li>
@@ -38,7 +31,7 @@ async function Training(){
                         <li>One-on-one mentorship and guidance</li>
                     </ul>
                 </div>
-                <div>
+                <div className="sm:w-[360px]">
                     <h1 className="text-orange-400 font-bold text-center slide-in-left">Training Materials</h1>
                     <ul className="list-disc pl-6 slide-in-top">
                         <li>Comprehensive training manual</li>
@@ -47,7 +40,7 @@ async function Training(){
                         <li>Access to online resources and tutorials</li>
                     </ul>
                 </div>
-                <div>
+                <div className="sm:w-[360px]">
                     <h1 className="text-orange-400 font-bold text-center slide-in-left">Prerequisites</h1>
                     <ul className="list-disc pl-6 slide-in-top">
                         <li>Basic knowledge of electronics and programming</li>
@@ -57,7 +50,7 @@ async function Training(){
                 </div>
             </article>
         </section>
-            {/* all posts to do with training services */}
+                {/* all posts to do with training services */}
             <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Activities</h1>
             <section className="training-services">
             <h1 className="text-xl text-main2 text-center font-bold">Training Images</h1>

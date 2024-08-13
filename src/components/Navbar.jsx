@@ -5,6 +5,10 @@ import Link from "next/link";
 //for navbar routes and on page links
 const links = [
     {
+        name:"Home",
+        link:'/'
+    },
+    {
         name:"Engineering",
         link:'/engineering'
     },

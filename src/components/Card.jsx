@@ -24,9 +24,9 @@ function Card({ title, image, details, route, alt }) {
             <article className="w-full sm:w-1/2 flex flex-col justify-center slide-in-right">
                 {details.map((item, index) => (
                     <div key={index} className="mb-4">
-                        <h2 className="font-bold text-lg text-center sm:text-left mb-2">{item.title}</h2>
+                        <h2 className="font-bold text-lg text-center sm:text-left mb-2 sm:text-xl md:text-2xl">{item.title}</h2>
                         {item.details.map((li, liIndex) => (
-                            <p key={liIndex} className="font-light text-center sm:text-left">
+                            <p key={liIndex} className="font-light text-center sm:text-left sm:text-lg">
                                 <span className="bi-arrow-up-right-circle text-main2 mr-2"></span>
                                 {li}
                             </p>

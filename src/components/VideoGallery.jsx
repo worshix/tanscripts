@@ -2,7 +2,7 @@ function VideoGallery({ videos }) {
     return (
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
             {videos.map((video, index) => (
-                <div key={index} className="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-md">
+                <div key={index} className="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-md slide-in-bottom">
                     <div className="w-full h-0 relative pb-[56.25%] video-container">
                         <div
                             dangerouslySetInnerHTML={{ __html: video.data.video.html }}
