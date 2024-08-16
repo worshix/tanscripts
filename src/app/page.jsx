@@ -3,10 +3,8 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import ContactForm from '@/components/ContactForm';
 import Gallery from '@/components/Gallery';
-import testImages  from './../../public/Images';
 import VideoGallery from '@/components/VideoGallery';
 import { createClient } from '@/prismicio';
-import { PrismicNextImage } from '@prismicio/next';
 
 const client = createClient();
 
@@ -26,13 +24,6 @@ const contacts = [
         link:'#',
         bootstrapIcon:'facebook',
         details:'page_name',
-    },
-    {
-        id:'contact-3',
-        name:'instagram',
-        link:'#',
-        bootstrapIcon:'instagram',
-        details:'insta user name',
     },
     {
         id:'contact-4',
@@ -106,20 +97,7 @@ const service2 = {
             ]
         }
     ],
-} 
-//images to test the gallery
-//const images =  testImages.slice(0,5)
-
-/**tester videos
-const videos = [
-    { src: '/assets/video1.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
-    { src: '/assets/video2.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
-    { src: '/assets/video3.mp4', type: 'video/mp4', description: 'This video shows absolute nonsense and should be taken down' },
-    // Add more videos as needed
-];
-*/
-//const videos = client.getAllByType('video');
-
+}
 
 export default async function Home() {
     const images = await client.getAllByType('image');

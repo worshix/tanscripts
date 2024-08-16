@@ -18,7 +18,7 @@ const links = [
     },
     {
         name:"Contact Us",
-        link:'/#contact-us'
+        link:'contactus'
     },
 ]
 
