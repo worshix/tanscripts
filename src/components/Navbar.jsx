@@ -86,7 +86,7 @@ const Navbar = () => {
                     }
                 }
                 >
-                <Link href={item.link} className="text-white font-semibold py-8 text-xl">{item.name}</Link>
+                <Link href={item.link} className="text-white font-semibold text-xl">{item.name}</Link>
                 </li>)}
             </ul>
         </nav>
