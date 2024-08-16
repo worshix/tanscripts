@@ -27,10 +27,10 @@ const ContactUs = () => {
         setStatus('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('Failed to send message.');
+        setStatus('Failed to send message(1).');
       }
     } catch (error) {
-      setStatus('Failed to send message.');
+      setStatus('Failed to send message(2).');
     }
   };
 
@@ -88,7 +88,7 @@ const ContactUs = () => {
       <div>
         <button
           type="submit"
-          className="w-full px-4 py-2 text-white bg-main-400 rounded-md shadow-sm hover:bg-main-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-400"
+          className="w-full px-4 py-2 text-white bg-main-400 rounded-md shadow-sm hover:bg-main2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-400"
         >
           Send Message
         </button>
