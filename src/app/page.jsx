@@ -21,16 +21,16 @@ const contacts = [
     {
         id:'contact-2',
         name:'facebook',
-        link:'#',
+        link:'https://www.facebook.com/profile.php?id=61564240952795&mibextid=ZbWKwL',
         bootstrapIcon:'facebook',
-        details:'page_name',
+        details:'Tanscripts Engineering',
     },
     {
         id:'contact-4',
         name:'E-Mail',
-        link:'#',
+        link:'mailto:transcriptsengineering@gmail.com',
         bootstrapIcon:'envelope',
-        details:'tandzapa@gmail.com',
+        details:'transcriptsengineering@gmail.com',
     },
     {
         id:'contact-5',

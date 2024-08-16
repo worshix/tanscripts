@@ -14,13 +14,10 @@ export default function Footer() {
               <a href="https://wa.me/263713664345" className="bi bi-whatsapp"> WhatsApp</a>
             </li>
             <li>
-              <a href="#" className="bi bi-facebook"> Facebook</a>
+              <a href="https://www.facebook.com/profile.php?id=61564240952795&mibextid=ZbWKwL" className="bi bi-facebook"> Facebook</a>
             </li>
             <li>
               <a href="mailto:tanscriptsengineering@gmail.com" className="bi bi-envelope"> Email</a>
-            </li>
-            <li>
-              <a href="#" className="bi bi-instagram"> Instagram</a>
             </li>
             <li>
               <a href="tel:+263713664345" className="bi bi-phone"> Phone</a>
@@ -34,8 +31,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-main-900 text-sky-200 font-bold text-center p-2">
-        <p>© {new Date().getFullYear()} Tanscripts Engineering. All rights reserved.</p>
+      <div className='w-full flex-shrink-0 flex justify-center gap-2 text-sm'>
+        <div className='inline-block'>
+          <p className='text-slate-300 font-bold'>© { new Date().getFullYear()} Tanscripts Engineering. All rights reserved</p>
+        </div>
+        <div className='inline-block'>
+          <p className='text-white font-bold mb-2'>Made By <a href="https://wa.me/263771975597" className='text-main2 underline'>PixelCrafte</a></p>
+        </div>
       </div>
     </footer>
   );
