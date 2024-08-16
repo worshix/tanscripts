@@ -112,8 +112,8 @@ export default async function Home() {
                 <h1 className="hero-text-3 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-4">Training the Next Generation</h1>
                 <p className="motto font-bold text-lg sm:text-xl text-white text-center mb-6">Where Embedded Systems Meet Industrial Strength</p>
                 <div className="buttons flex flex-row gap-4 justify-center py-10">
-                    <Link href='/contacts' className="call-btn-left hover:scale-110 transition-transform ease-linear duration-200 bg-sky-500 p-3 font-bold rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
-                    <Link href='/contacts' className="call-btn-right hover:scale-110 transition-transform ease-linear duration-200 bg-orange-400 p-3 font-bold rounded-lg block w-fit">Start Training</Link>
+                    <Link href='mailto:transcriptsengineering@gmail.com' className="call-btn-left hover:scale-110 transition-transform ease-linear duration-200 bg-sky-500 p-3 font-bold rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
+                    <Link href='/contactus' className="call-btn-right hover:scale-110 transition-transform ease-linear duration-200 bg-orange-400 p-3 font-bold rounded-lg block w-fit">Start Training</Link>
                 </div>
             </section>
 
