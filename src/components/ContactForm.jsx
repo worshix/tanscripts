@@ -1,35 +1,41 @@
 'use client';
 import { useState } from 'react';
+import axios from 'axios';
 
 function SubscribeForm() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [error, setError] = useState('');
+    const [status, setStatus] = useState(null);
+    const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+	setStatus('sending');
+	setMessage('');
 
-        if (!name || !email) {
-            setError('Please fill in all fields.');
-            return;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setError('Please enter a valid email address.');
-            return;
-        }
-
-        setError('');
-        // Handle successful form submission
-        console.log('Form submitted:', { name, email });
+        try {
+	  const response = await axios.post('/api/subscribe', { email, name });
+	  if (response.data.error) {
+	    setStatus('error');
+	    setMessage(response.data.error);
+	  } else {
+	    setStatus('success');
+	    setMessage('Subscribed!');
+	    }
+	} catch (error) {
+	  console.error('Form submission error:', error.response?.data);
+	  setStatus('error');
+	  setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
+	}
     };
 
     return (
         <article className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md w-full sm:w-1/2 mx-auto m-4">
             <h2 className="font-bold text-main-300 text-2xl mb-4">Subscribe for updates</h2>
             <form onSubmit={handleSubmit} className="w-full">
-                {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+	        {status === 'sending' && <div className='text-red-500 text-sm mb-4'>Sending...</div>}
+	        {status === 'error' && <div className='text-red-500 text-sm mb-4'>{message}</div>}
+	        {status === 'success' && <div className='text-red-500 text-sm mb-4'>{message}</div>}
                 <div className="mb-4">
                     <label className="block text-main-300 font-bold mb-2" htmlFor="name">Name</label>
                     <input
