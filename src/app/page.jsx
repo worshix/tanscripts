@@ -64,7 +64,7 @@ const service1 = {
             details:[
                 'Industrial Electrification',
                 'Domestic Electrification',
-                'Solar Installation'
+                'Solar Installations'
             ]
         }
     ],
