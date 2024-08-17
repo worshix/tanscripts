@@ -33,9 +33,6 @@ function SubscribeForm() {
         <article className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md w-full sm:w-1/2 mx-auto m-4">
             <h2 className="font-bold text-main-300 text-2xl mb-4">Subscribe for updates</h2>
             <form onSubmit={handleSubmit} className="w-full">
-	        {status === 'sending' && <div className='text-red-500 text-sm mb-4'>Sending...</div>}
-	        {status === 'error' && <div className='text-red-500 text-sm mb-4'>{message}</div>}
-	        {status === 'success' && <div className='text-red-500 text-sm mb-4'>{message}</div>}
                 <div className="mb-4">
                     <label className="block text-main-300 font-bold mb-2" htmlFor="name">Name</label>
                     <input
@@ -64,6 +61,9 @@ function SubscribeForm() {
                 >
                     Subscribe
                 </button>
+                {status === 'sending' && <div className='text-yellow-400 text-sm mb-4 p-2'>Sending...</div>}
+                {status === 'error' && <div className='text-red-500 text-sm mb-4 p-2'>{message}</div>}
+                {status === 'success' && <div className='text-green-500 text-sm mb-4 p-2'>{message}</div>}
             </form>
         </article>
     );
