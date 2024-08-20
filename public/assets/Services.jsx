@@ -98,7 +98,7 @@ export default {
             title:'Programmable Logic Contollers (PLC)',
             details:[
                 'Introduction',
-                'Customization to one brand (Uniformics, Mitsubishi, Siemens, Delta, etc.',
+                'Customization to one brand (Unitronics, Mitsubishi, Siemens, Delta, etc.',
                 'Introduction to Ladder Programming',
                 'Sensors and actuator interfacing',
                 'Motor Wiring',
