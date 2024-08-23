@@ -29,7 +29,10 @@ const page = () => {
         </div>
         </div>
       </section>
-      <ContactUs />
+      <section className="h-screen">
+        .
+      </section>
+      {/* <ContactUs /> */}
     </main>
   )
 }
