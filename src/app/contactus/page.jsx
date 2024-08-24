@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const page = () => {
   return (
-    <main className='p-2'>
+    <main className='p-2 overflow-x-hidden'>
       <h1 className="text-3xl sm:text-5xl font-bold mt-4 sm:my-10 text-center text-main-400">Contact Us</h1>
       <section className='flex items-center justify-center'>
       <div className='flex flex-col sm:flex-row lg:flex-col gap-6 text-center sm:text-left items-center justify-center'>
@@ -28,9 +28,6 @@ const page = () => {
           </div>
         </div>
         </div>
-      </section>
-      <section className="h-screen">
-        .
       </section>
       <ContactUs />
     </main>

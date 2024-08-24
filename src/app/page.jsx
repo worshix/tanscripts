@@ -104,7 +104,7 @@ export default async function Home() {
     const videos = await client.getAllByType('video');
     console.log(images);
     return (
-        <main>
+        <main className="overflow-x-hidden">
             {/* hero */}
             <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center">
                 <h1 className="hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</h1>
@@ -118,21 +118,21 @@ export default async function Home() {
             </section>
 
             {/* services overview */}
-            <section className="landing-services">
+            <section className="landing-services overflow-x-hidden">
                 <Card {...service1} />
                 <Card {...service2} />
             </section>
 
             {/* latest posts */}
             <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Latest Activities</h1>
-            <section className="latest-stuff">
+            <section className="latest-stuff overflow-x-hidden">
                 <h1 className="text-lg text-main2 text-center font-bold sm:text-2xl">Images</h1>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
                     <Gallery images = {images} />
                 </artcile>
                 <h1 className="text-lg text-main2 text-center font-bold sm:text-2xl">Videos</h1>
-                <artcile className="latest-videos">
+                <artcile className="latest-videos overflow-x-hidden">
                     {/* Latest videos in here, just 3 is enough */}
                     <VideoGallery videos={videos} />;
                     <a id="contact-us"></a>
