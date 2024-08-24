@@ -32,7 +32,7 @@ const page = () => {
       <section className="h-screen">
         .
       </section>
-      {/* <ContactUs /> */}
+      <ContactUs />
     </main>
   )
 }
