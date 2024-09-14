@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+export default async function POST(req, res) {
   // Ensure this is a POST request from Prismic Webhook
   if (req.method === 'POST') {
     try {
