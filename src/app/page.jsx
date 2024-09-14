@@ -81,9 +81,11 @@ export default async function Home() {
         <main className="overflow-x-hidden">
             {/* hero */}
             <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center">
-                <h1 className="hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</h1>
-                <h1 className="hero-text-2 text-2xl sm:text-3xl font-bold text-center hero-font mb-2">While</h1>
-                <h1 className="hero-text-3 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-4">Training the Next Generation</h1>
+                <h1 className='w-full'>
+                    <span className="hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</span>
+                    <span className="hero-text-2 text-2xl sm:text-3xl font-bold text-center hero-font mb-2">While</span>
+                    <span className="hero-text-3 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-4">Training the Next Generation</span>
+                </h1>
                 <p className="motto font-bold text-lg sm:text-xl text-white text-center mb-6">Where Embedded Systems Meet Industrial Strength</p>
                 <div className="buttons flex flex-row gap-4 justify-center py-10">
                     <Link href='mailto:transcriptsengineering@gmail.com' className="spin-btn hover:scale-110 bg-sky-500 p-3 font-bold rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
@@ -98,14 +100,14 @@ export default async function Home() {
             </section>
 
             {/* latest posts */}
-            <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Latest Activities</h1>
+            <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 sidebar'>Latest Activities</h2>
             <section className="latest-stuff overflow-x-hidden">
-                <h1 className="text-lg text-main2 text-center font-bold sm:text-2xl">Images</h1>
+                <h3 className="text-lg text-main2 text-center font-bold sm:text-2xl">Images</h3>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
                     <Gallery images = {images} />
                 </artcile>
-                <h1 className="text-lg text-main2 text-center font-bold sm:text-2xl">Videos</h1>
+                <h3 className="text-lg text-main2 text-center font-bold sm:text-2xl">Videos</h3>
                 <artcile className="latest-videos overflow-x-hidden">
                     {/* Latest videos in here, just 3 is enough */}
                     <VideoGallery videos={videos} />;
@@ -133,9 +135,9 @@ export default async function Home() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+        <h3 className="text-4xl sm:text-5xl font-bold mb-6">
           Let's Automate Your Future
-        </h2>
+        </h3>
         <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
           Transform your manufacturing and industrial processes with cutting-edge automation solutions. 
           From robotics to intelligent control systems, we have the expertise to take your operations 

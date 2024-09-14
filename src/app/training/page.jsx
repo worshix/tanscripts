@@ -21,12 +21,12 @@ async function Training(){
         <main>
         <section>
         <h1 key='automation-header' className="text-orange-400 text-center text-xl font-bold my-4 md:text-2xl md:my-6 slide-in-top">Training</h1>
-        <article className="flex justify-center flex-col gap-2 sm:flex-row flex-wrap mt-4 mb-8">
+        <div className="flex justify-center flex-col gap-2 sm:flex-row flex-wrap mt-4 mb-8">
                 {Services.training.map((item, index) => <TrainingCard key={"training-card"+index} prop = {item}/>)}
-            </article>
+            </div>
             <article className="mt-6 flex gap-2 flex-wrap justify-center items-top sm:text-lg">
                 <div className="sm:w-[360px]">
-                    <h1 className="text-orange-400 font-bold text-center slide-in-left">Training Methodology</h1>
+                    <h2 className="text-orange-400 font-bold text-center slide-in-left">Training Methodology</h2>
                     <ul className="list-disc pl-6 slide-in-top">
                         <li>Theoretical lectures</li>
                         <li>Practical hands-on sessions</li>
@@ -36,7 +36,7 @@ async function Training(){
                     </ul>
                 </div>
                 <div className="sm:w-[360px]">
-                    <h1 className="text-orange-400 font-bold text-center slide-in-left">Training Materials</h1>
+                    <h2 className="text-orange-400 font-bold text-center slide-in-left">Training Materials</h2>
                     <ul className="list-disc pl-6 slide-in-top">
                         <li>Comprehensive training manual</li>
                         <li>Software and tools for programming and design</li>
@@ -45,7 +45,7 @@ async function Training(){
                     </ul>
                 </div>
                 <div className="sm:w-[360px]">
-                    <h1 className="text-orange-400 font-bold text-center slide-in-left">Prerequisites</h1>
+                    <h2 className="text-orange-400 font-bold text-center slide-in-left">Prerequisites</h2>
                     <ul className="list-disc pl-6 slide-in-top">
                         <li>Basic knowledge of electronics and programming</li>
                         <li>Familiarity with circuit analysis and design</li>
@@ -55,14 +55,14 @@ async function Training(){
             </article>
         </section>
                 {/* all posts to do with training services */}
-            <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Activities</h1>
+            <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Activities</h2>
             <section className="training-services">
-            <h1 className="text-xl text-main2 text-center font-bold">Training Images</h1>
+            <h3 className="text-xl text-main2 text-center font-bold">Training Images</h3>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
                     <Gallery images = {images} />
                 </artcile>
-                <h1 className="text-xl text-main2 text-center font-bold">Training Videos</h1>
+                <h3 className="text-xl text-main2 text-center font-bold">Training Videos</h3>
                 <artcile className="latest-videos">
                     {/* Latest videos in here, just 3 is enough */}
                     <VideoGallery videos={videos} />;
@@ -71,7 +71,7 @@ async function Training(){
             </section>
 
             {/* testimonials for training services */}
-            <h1 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Testimonials</h1>
+            <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Testimonials</h2>
             <Testimonial clients={testimonials}/>
             <BasicAnimations />
         </main>
