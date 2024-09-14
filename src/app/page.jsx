@@ -5,6 +5,11 @@ import Gallery from '@/components/Gallery';
 import VideoGallery from '@/components/VideoGallery';
 import { createClient } from '@/prismicio';
 
+export const metadata = {
+    title: "Tanscripts Engineering | Industrial Automation & Engineering Solutions",
+}
+  
+  
 const client = createClient();
 
 const HomePageAnime = dynamic(() => import('./HomePageAnime'), { ssr: false });

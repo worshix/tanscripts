@@ -3,6 +3,10 @@ import ContactUs from './ContactUs';
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 
+export const metadata = {
+  title: "Tanscripts Engineering | Contact Us",
+}
+
 const page = () => {
   return (
     <main className="overflow-x-hidden bg-gray-300">
