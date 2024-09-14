@@ -11,16 +11,18 @@ const BasicAnimations = () => {
     const SlideInTop = document.querySelectorAll('.slide-in-top');
     SlideInTop.forEach((slide) => {
       gsap.fromTo(slide, 
-        { opacity: 0, y: 50 }, 
+        { opacity: 0, y: -20 }, 
         {
           opacity: 1,
           y: 0,
           duration: .4,
+          delay:.2,
           scrollTrigger: {
             trigger: slide,
             start: 'top 80%',
             end: 'bottom 20%',
-            toggleActions: 'play none none none'
+            scrub:true, //smoothens animation
+            toggleActions: "play reverse play reverse", // Play when entering, reverse when leaving
           }
         }
       );
@@ -41,7 +43,7 @@ const BasicAnimations = () => {
             trigger: slide,
             start: 'top 80%',
             end: 'bottom 20%',
-            toggleActions: 'play none none none'
+            toggleActions: "play reverse play reverse", // Play when entering, reverse when leaving
           }
         }
       );
@@ -62,7 +64,7 @@ const BasicAnimations = () => {
             trigger: slide,
             start: 'top 80%',
             end: 'bottom 20%',
-            toggleActions: 'play none none none'
+            toggleActions: "play reverse play reverse", // Play when entering, reverse when leaving
           }
         }
       );
@@ -82,10 +84,76 @@ const BasicAnimations = () => {
           duration: .6,
           scrollTrigger: {
             trigger: slide,
+            delay:.2,
             start: 'top 80%',
             end: 'bottom 20%',
-            toggleActions: 'play none none none'
+            toggleActions: "play reverse play reverse", // Play when entering, reverse when leaving
           }
+        }
+      );
+    });
+  });
+
+  useGSAP(() => {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    const scaleXCenter = document.querySelectorAll('.scale-x-center');
+    scaleXCenter.forEach((item) => {
+      gsap.fromTo(item,
+        { scaleX: 0 },
+        {
+          scaleX: 1, duration: 2,
+          ease: "power2.out", 
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: "play reverse play reverse", // Play when entering, reverse when leaving
+          }
+        }
+      );
+    });
+  });
+
+  useGSAP(() => {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    const scaleXLeft = document.querySelectorAll('.scale-x-left');
+    scaleXLeft.forEach((item) => {
+      gsap.set(item, {transformOrigin:'left center', scale:0})
+      gsap.to(item,
+        {
+          scale: 1, duration: 2,
+          ease: "power2.out", 
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: "play reverse play reverse", // Play when entering, reverse when leaving
+          }
+        }
+      );
+    });
+  });
+
+  useGSAP(() => {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    const spinBtn = document.querySelectorAll('.spin-btn');
+    spinBtn.forEach((item) => {
+      gsap.set(item, {scale:0, transformOrigin:'50% 50%'})
+      gsap.to(item,
+        {
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: "play reverse play reverse", // Play when entering, reverse when leaving
+          },
+          scale:1,
+          rotation:360,
+          duration:1.2,
+          ease:'elastic.out'
         }
       );
     });

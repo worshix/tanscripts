@@ -12,7 +12,7 @@ export default function ServiceCard(prop){
             <Image className="graphic-image w-full rounded-xl rounded-b-none" src={`/assets/${image}`} alt={title} width={320} height={320}/>
             <ul className="flex justify-between p-2 items-center">
                 <li className=" block w-3/5 p-1 bg-main-300 bg-opacity-75 font-bold rounded-md text-center h-fit text-sm text-white">{title}</li>
-                <li className="block w-2/5"><Link className="block p-2 font-bold text-slate-500 text-sm" href='/Contacts'>Get Service<i className="inline-block bi bi-phone animate-pulse"></i></Link></li>
+                <li className="block w-2/5"><Link className="block p-2 font-bold text-slate-500 text-sm" href='/contactus'>Get Service<i className="inline-block bi bi-phone animate-pulse"></i></Link></li>
             </ul>
             <p className="font-bold p-2">{description}</p>
             <ul className="pl-6 list-disc mb-2">

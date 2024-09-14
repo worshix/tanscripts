@@ -30,11 +30,10 @@ function SubscribeForm() {
     };
 
     return (
-        <article className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md w-full sm:w-1/2 mx-auto m-4">
-            <h2 className="font-bold text-main-300 text-2xl mb-4">Subscribe for updates</h2>
-            <form onSubmit={handleSubmit} className="w-full">
+        <article className="flex flex-col items-center p-6 rounded-lg w-full sm:w-1/2 mx-auto m-4">
+            <h2 className="font-bold text-white text-2xl mb-4">Subscribe for updates</h2>
+            <form onSubmit={handleSubmit} className="w-full space-y-8">
                 <div className="mb-4">
-                    <label className="block text-main-300 font-bold mb-2" htmlFor="name">Name</label>
                     <input
                         type="text"
                         id="name"
@@ -45,7 +44,6 @@ function SubscribeForm() {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-main-300 font-bold mb-2" htmlFor="email">Email</label>
                     <input
                         type="email"
                         id="email"
