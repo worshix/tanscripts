@@ -13,7 +13,7 @@ const page = () => {
           {/* Contact Form */}
           <ContactUs />
       {/* Contact Options Section */}
-      <section className="flex items-center justify-center my-12">
+      <section className="flex items-center justify-center my-12 p-2">
         <div className="flex flex-col md:flex-row lg:flex-col gap-10 text-center sm:text-left items-center justify-center max-w-4xl w-full">
           
           {/* Connect With Us */}
@@ -51,7 +51,7 @@ const page = () => {
             <div className="flex justify-center gap-6 text-2xl">
               <Link href='https://www.facebook.com/profile.php?id=61564240952795&mibextid=ZbWKwL'>
                 <span className="text-main-600 hover:text-main-800">
-                  <FaFacebook />
+                  <FaFacebook size={30} />
                 </span>
               </Link>
             </div>
