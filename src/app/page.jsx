@@ -136,7 +136,7 @@ export default async function Home() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h3 className="text-4xl sm:text-5xl font-bold mb-6">
-          Let's Automate Your Future
+          Let&apos;s Automate Your Future
         </h3>
         <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
           Transform your manufacturing and industrial processes with cutting-edge automation solutions. 
