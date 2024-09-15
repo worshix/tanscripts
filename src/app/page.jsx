@@ -145,7 +145,7 @@ export default async function Home() {
         </p>
         
         {/* Call to Action Button */}
-        <Link href="/contact">
+        <Link href="/contactus">
           <span className="inline-block px-8 py-4 text-lg font-semibold bg-white text-main-500 rounded-lg shadow-lg hover:bg-main-100 transition-colors">
             Get In Touch
           </span>
