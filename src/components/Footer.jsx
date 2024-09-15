@@ -20,7 +20,7 @@ export default function Footer() {
                 <a href="https://www.facebook.com/profile.php?id=61564240952795&mibextid=ZbWKwL" className="bi bi-facebook"> Facebook</a>
               </li>
               <li>
-                <a href="mailto:tanscriptsengineering@gmail.com" className="bi bi-envelope"> Email</a>
+                <a href="mailto:transcriptsengineering@gmail.com" className="bi bi-envelope"> Email</a>
               </li>
               <li>
                 <a href="tel:+263713664345" className="bi bi-phone"> Phone</a>
