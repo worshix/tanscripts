@@ -108,7 +108,7 @@ const ContactUs = () => {
           </div>
 
           {/* Status Message */}
-          {status && <p className="text-sm text-gray-700 text-center">{status}</p>}
+          {status && <p className="text-sm text-white text-center">{status}</p>}
         </form>
       </div>
     </section>
