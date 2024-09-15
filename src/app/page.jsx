@@ -81,10 +81,10 @@ export default async function Home() {
         <main className="overflow-x-hidden">
             {/* hero */}
             <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center">
-                <h1 className='w-full'>
-                    <span className="hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</span>
-                    <span className="hero-text-2 text-2xl sm:text-3xl font-bold text-center hero-font mb-2">While</span>
-                    <span className="hero-text-3 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-4">Training the Next Generation</span>
+                <h1 className='w-full p-2'>
+                    <span className="block hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</span>
+                    <span className="block hero-text-2 text-2xl sm:text-3xl font-bold text-center hero-font mb-2">While</span>
+                    <span className="block hero-text-3 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-4">Training the Next Generation</span>
                 </h1>
                 <p className="motto font-bold text-lg sm:text-xl text-white text-center mb-6">Where Embedded Systems Meet Industrial Strength</p>
                 <div className="buttons flex flex-row gap-4 justify-center py-10">
