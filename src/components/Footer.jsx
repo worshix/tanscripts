@@ -6,7 +6,7 @@ export default function Footer() {
       <section className="bg-main-800 text-white text-sm w-full mt-4">
         <div className="flex flex-col sm:flex-row justify-between items-center divide-y sm:divide-y-0 sm:divide-x p-4">
           <div className="flex-1 p-2 text-center sm:text-left">
-            <h3 className="text-orange-400 font-bold">Tanscripts Engineering</h3>
+            <h3 className="text-orange-400 font-bold">Zimtech Engineering</h3>
             <p>Embedded systems design and industrial automation</p>
           </div>
 
