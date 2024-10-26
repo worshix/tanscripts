@@ -40,7 +40,7 @@ const Navbar = () => {
                     document.getElementsByClassName('selected')[0].classList.remove('selected')
                     const button = document.getElementsByClassName('Home');
                     button[0].classList.add('selected');
-                }}><div className="flex gap-1 w-fit rounded-xl bg-white p-3 shadow-md shadow-black font-bold">Tanscripts Engineering</div>
+                }}><div className="flex gap-1 w-fit rounded-xl bg-white p-3 shadow-md shadow-black font-bold">Zimtech Engineering</div>
             </Link>
             <ul className="sm:flex m-0 p-0 hidden nav-ul text-xs sm:text-sm text-white">
                 {links.map((item) => <li 
