@@ -9,7 +9,7 @@ import testimonials from "../../../public/assets/testimonials";
 import { createClient } from "@/prismicio";
 
 export const metadata = {
-    title: "Tanscripts Engineering | Engineering Solutions",
+    title: "Zimtech Engineering | Engineering Solutions",
 }
 
 const BasicAnimations = dynamic(() => import('./../../components/BasicAnimations'), { ssr: false });

@@ -6,7 +6,7 @@ import VideoGallery from '@/components/VideoGallery';
 import { createClient } from '@/prismicio';
 
 export const metadata = {
-    title: "Tanscripts Engineering | Industrial Automation & Engineering Solutions",
+    title: "Zimtech Engineering | Industrial Automation & Engineering Solutions",
 }
   
   
