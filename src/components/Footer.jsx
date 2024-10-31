@@ -37,7 +37,7 @@ export default function Footer() {
         <div className='w-full flex-shrink-0 flex justify-center gap-2 text-sm'>
         {/* Bottom Bar: Copyright and Credit */}
         <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-300 w-full flex-shrink-0">
-                <p><time>© {new Date().getFullYear()}</time> Tanscripts Engineering. All rights reserved.</p>
+                <p><time>© {new Date().getFullYear()}</time> Zimtech Engineering. All rights reserved.</p>
                 <p>Made with ❤️ by <Link href='https://pixelcrafte.co.zw' target="_blank" className="underline text-main2">PixelCrafte</Link></p>
               </div>
         </div>
