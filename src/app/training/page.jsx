@@ -9,7 +9,7 @@ import { createClient } from '@/prismicio';
 
 
 export const metadata = {
-    title: "Tanscripts Engineering | Training Engineering",
+    title: "Zimtech Engineering | Training Engineering",
 }
 
 const BasicAnimations = dynamic(() => import('./../../components/BasicAnimations'), { ssr: false });
