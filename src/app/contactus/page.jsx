@@ -42,7 +42,7 @@ const page = () => {
             <h4 className="text-xl font-semibold text-gray-700 mb-4">Mail</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:zimtechengineering@gmail.com" className="flex items-center gap-2 text-main-600 hover:text-blue-800">
+                <a href="mailto:zimtechengineeringpro@gmail.com" className="flex items-center gap-2 text-main-600 hover:text-blue-800">
                   <FaEnvelope className="text-xl" /> zimtechengineeringpro@gmail.com
                 </a>
               </li>
