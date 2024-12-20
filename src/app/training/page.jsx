@@ -60,12 +60,12 @@ async function Training(){
             <h3 className="text-xl text-main2 text-center font-bold">Training Images</h3>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
-                    <Gallery images = {images} />
+                    {/* <Gallery images = {images} /> */}
                 </artcile>
                 <h3 className="text-xl text-main2 text-center font-bold">Training Videos</h3>
                 <artcile className="latest-videos">
                     {/* Latest videos in here, just 3 is enough */}
-                    <VideoGallery videos={videos} />;
+                    {/* <VideoGallery videos={videos} />; */}
                 </artcile>
 
             </section>

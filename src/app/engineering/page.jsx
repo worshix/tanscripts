@@ -3,7 +3,6 @@ import Services from "../../../public/assets/Services";
 import dynamic from "next/dynamic";
 import Gallery from "@/components/Gallery";
 import VideoGallery from "@/components/VideoGallery";
-//import images from './../../../public/Images';
 import Testimonial from "@/components/Testimonial";
 import testimonials from "../../../public/assets/testimonials";
 import { createClient } from "@/prismicio";
@@ -45,12 +44,12 @@ async function Engineering(){
                 <h2 className="text-xl text-main2 text-center font-bold">Engineering Images</h2>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
-                    <Gallery images = {images} />
+                    {/* <Gallery images = {images} /> */}
                 </artcile>
                 <h2 className="text-xl text-main2 text-center font-bold">Engineering Videos</h2>
                 <artcile className="latest-videos">
                     {/* Latest videos in here, just 3 is enough */}
-                    <VideoGallery videos={videos} />;
+                    {/* <VideoGallery videos={videos} />; */}
                 </artcile>
             </section>
 
