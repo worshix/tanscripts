@@ -1,5 +1,3 @@
-import Engineering from "@/app/engineering/page";
-
 const activities = {
     engineering:[
         {
@@ -14,7 +12,7 @@ const activities = {
         },
         {
             image:'/assets/images/endnode pcb.png',
-            alt:"endnode pcb image",
+            alt:"zimtech endnode pcb image",
             description:"The PCB of the endnode is a standout element, showcasing a remarkable design. Its innovative structure not only enhances performance but also ensures reliability and longevity, reflecting meticulous attention to detail."
         }
     ]

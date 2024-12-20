@@ -6,6 +6,7 @@ import VideoGallery from "@/components/VideoGallery";
 import Testimonial from "@/components/Testimonial";
 import testimonials from "../../../public/assets/testimonials";
 import { createClient } from "@/prismicio";
+import activities from "@/components/activities";
 
 export const metadata = {
     title: "Zimtech Engineering | Engineering Solutions",
@@ -44,18 +45,17 @@ async function Engineering(){
                 <h2 className="text-xl text-main2 text-center font-bold">Engineering Images</h2>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
-                    {/* <Gallery images = {images} /> */}
+                    <Gallery images = {activities.engineering} />
                 </artcile>
-                <h2 className="text-xl text-main2 text-center font-bold">Engineering Videos</h2>
+                {/* <h2 className="text-xl text-main2 text-center font-bold">Engineering Videos</h2>
                 <artcile className="latest-videos">
-                    {/* Latest videos in here, just 3 is enough */}
-                    {/* <VideoGallery videos={videos} />; */}
-                </artcile>
+                    <VideoGallery videos={videos} />;
+                </artcile> */}
             </section>
 
             {/* testimonials for engineering services */}
-            <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Testimonials</h2>
-            <Testimonial clients={testimonials}/>
+            {/* <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Testimonials</h2>
+            <Testimonial clients={testimonials}/> */}
             <BasicAnimations />
         </main>
     )

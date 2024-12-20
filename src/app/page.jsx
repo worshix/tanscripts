@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Gallery from '@/components/Gallery';
 import VideoGallery from '@/components/VideoGallery';
 import { createClient } from '@/prismicio';
+import activities from '@/components/activities';
 
 export const metadata = {
     title: "Zimtech Engineering | Industrial Automation & Engineering Solutions",
@@ -105,7 +106,7 @@ export default async function Home() {
                 <h3 className="text-lg text-main2 text-center font-bold sm:text-2xl">Images</h3>
                 <artcile className="latest-images">
                     {/* Latest images in here, just 5 is enough */}
-                    {/* <Gallery images = {images} /> */}
+                    <Gallery images = {activities.engineering} />
                 </artcile>
                 {/* <h3 className="text-lg text-main2 text-center font-bold sm:text-2xl">Videos</h3>
                 <artcile className="latest-videos overflow-x-hidden">

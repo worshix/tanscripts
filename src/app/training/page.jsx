@@ -55,24 +55,24 @@ async function Training(){
             </article>
         </section>
                 {/* all posts to do with training services */}
-            <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Activities</h2>
-            <section className="training-services">
+            {/* <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Activities</h2> */}
+            {/* <section className="training-services">
             <h3 className="text-xl text-main2 text-center font-bold">Training Images</h3>
                 <artcile className="latest-images">
-                    {/* Latest images in here, just 5 is enough */}
-                    {/* <Gallery images = {images} /> */}
+                    Latest images in here, just 5 is enough
+                    <Gallery images = {images} />
                 </artcile>
                 <h3 className="text-xl text-main2 text-center font-bold">Training Videos</h3>
                 <artcile className="latest-videos">
-                    {/* Latest videos in here, just 3 is enough */}
-                    {/* <VideoGallery videos={videos} />; */}
+                    Latest videos in here, just 3 is enough
+                    <VideoGallery videos={videos} />;
                 </artcile>
 
-            </section>
+            </section> */}
 
             {/* testimonials for training services */}
-            <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Testimonials</h2>
-            <Testimonial clients={testimonials}/>
+            {/* <h2 className='text-center font-bold text-2xl sm:text-3xl text-main-400 m-4 slide-in-top'>Testimonials</h2> */}
+            {/* <Testimonial clients={testimonials}/> */}
             <BasicAnimations />
         </main>
     )
