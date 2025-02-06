@@ -5,6 +5,7 @@ import Gallery from '@/components/Gallery';
 import VideoGallery from '@/components/VideoGallery';
 import { createClient } from '@/prismicio';
 import activities from '@/components/activities';
+import { Roboto } from 'next'
 
 export const metadata = {
     title: "Zimtech Engineering | Industrial Automation & Engineering Solutions",
@@ -81,7 +82,16 @@ export default async function Home() {
     return (
         <main className="overflow-x-hidden">
             {/* hero */}
-            <section className="hero pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center">
+            <section className="pt-6 w-full overflow-x-hidden h-screen text-white flex flex-col items-center justify-center relative">
+                <video
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  src="/hero-vid.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ filter: "brightness(50%)", animation: "slow-motion 30s linear infinite" }}
+                />
                 <h1 className='w-full p-2'>
                     <span className="block hero-text-1 text-4xl sm:text-5xl font-extrabold text-center hero-font mb-2">Unlocking Industrial Automation Potential</span>
                     <span className="block hero-text-2 text-2xl sm:text-3xl font-bold text-center hero-font mb-2">While</span>
