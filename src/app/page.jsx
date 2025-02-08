@@ -5,7 +5,6 @@ import Gallery from '@/components/Gallery';
 import VideoGallery from '@/components/VideoGallery';
 import { createClient } from '@/prismicio';
 import activities from '@/components/activities';
-import { Roboto } from 'next'
 
 export const metadata = {
     title: "Zimtech Engineering | Industrial Automation & Engineering Solutions",
