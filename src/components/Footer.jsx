@@ -1,4 +1,5 @@
 import Link from "next/link";
+import socials from "../../public/socials";
 
 export default function Footer() {
   return (
@@ -14,16 +15,16 @@ export default function Footer() {
             <h4 className="text-orange-400 font-bold mb-2">Connect with us</h4>
             <ul className="flex justify-center sm:justify-start gap-4">
               <li>
-                <a href="https://wa.me/263713664345" className="bi bi-whatsapp"> WhatsApp</a>
+                <Link href="https://wa.me/263713664345" className="bi bi-whatsapp"> WhatsApp</Link>
               </li>
               <li>
-                <a href="https://www.facebook.com/profile.php?id=61564240952795&mibextid=ZbWKwL" className="bi bi-facebook"> Facebook</a>
+                <Link href={socials.facebookServices} className="bi bi-facebook"> Facebook</Link>
               </li>
               <li>
-                <a href="mailto:zimtechengineeringpro@gmail.com" className="bi bi-envelope"> Email</a>
+                <Link href={'mailto:'+socials.info} className="bi bi-envelope"> Email</Link>
               </li>
               <li>
-                <a href="tel:+263713664345" className="bi bi-phone"> Phone</a>
+                <Link href="tel:+263713664345" className="bi bi-phone"> Phone</Link>
               </li>
             </ul>
           </div>

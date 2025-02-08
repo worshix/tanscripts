@@ -5,6 +5,7 @@ import Gallery from '@/components/Gallery';
 import VideoGallery from '@/components/VideoGallery';
 import { createClient } from '@/prismicio';
 import activities from '@/components/activities';
+import socials from '../../public/socials';
 
 export const metadata = {
     title: "Zimtech Engineering | Industrial Automation & Engineering Solutions",
@@ -98,8 +99,8 @@ export default async function Home() {
                 </h1>
                 <p className="motto font-bold text-lg sm:text-xl text-white text-center mb-6">Where Embedded Systems Meet Industrial Strength</p>
                 <div className="buttons flex flex-row gap-4 justify-center py-10">
-                    <Link href='mailto:transcriptsengineering@gmail.com' className="spin-btn hover:scale-110 bg-sky-500 p-3 font-bold rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
-                    <Link href='/contactus' className="spin-btn hover:scale-110 bg-orange-400 p-3 font-bold rounded-lg block w-fit">Start Training</Link>
+                    <Link href={'mailto:'+socials.info} className="spin-btn hover:scale-110 bg-sky-500 p-3 font-bold rounded-lg block w-fit">Get In Touch<span className="bi bi-phone-vibrate animate-bounce inline-block ml-1"></span></Link>
+                    <Link href={'mailto:'+socials.training} className="spin-btn hover:scale-110 bg-orange-400 p-3 font-bold rounded-lg block w-fit">Start Training</Link>
                 </div>
             </section>
 
@@ -154,9 +155,9 @@ export default async function Home() {
         </p>
         
         {/* Call to Action Button */}
-        <Link href="/contactus">
+        <Link href={'https://wa.me/'+socials.phone} passHref>
           <span className="inline-block px-8 py-4 text-lg font-semibold bg-white text-main-500 rounded-lg shadow-lg hover:bg-main-100 transition-colors">
-            Get In Touch
+            WhatsApp Us
           </span>
         </Link>
       </div>
