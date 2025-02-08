@@ -2,6 +2,7 @@ import { FaPhone, FaWhatsapp, FaEnvelope, FaFacebook } from 'react-icons/fa';
 import ContactUs from './ContactUs';
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
+import socials from '../../../public/socials';
 
 export const metadata = {
   title: "Zimtech Engineering | Contact Us",
@@ -25,14 +26,14 @@ const page = () => {
             <h4 className="text-xl font-semibold text-gray-700 mb-4">Connect With Us</h4>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+263713664345" className="flex items-center gap-2 text-main-600 hover:text-main-800">
+                <Link href="tel:+263713664345" className="flex items-center gap-2 text-main-600 hover:text-main-800">
                   <FaPhone className="text-xl" /> Phone: +263713664345
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://wa.me/263713664345" className="flex items-center gap-2 text-green-600 hover:text-green-800">
+                <Link href="https://wa.me/263713664345" className="flex items-center gap-2 text-green-600 hover:text-green-800">
                   <FaWhatsapp className="text-xl" /> WhatsApp: +263713664345
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -42,9 +43,9 @@ const page = () => {
             <h4 className="text-xl font-semibold text-gray-700 mb-4">Mail</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:zimtechengineeringpro@gmail.com" className="flex items-center gap-2 text-main-600 hover:text-blue-800">
-                  <FaEnvelope className="text-xl" /> zimtechengineeringpro@gmail.com
-                </a>
+                <Link href={'mailto:'+socials.info} className="flex items-center gap-2 text-main-600 hover:text-blue-800 text-wrap">
+                  <FaEnvelope className="text-xl" /> info@zimtechengineering.co.zw
+                </Link>
               </li>
             </ul>
           </div>
@@ -53,7 +54,7 @@ const page = () => {
           <div className="bg-white shadow-lg rounded-lg p-6 w-full sm:w-1/3">
             <h4 className="text-xl font-semibold text-gray-700 mb-4">Follow Us</h4>
             <div className="flex justify-center gap-6 text-2xl">
-              <Link href='https://www.facebook.com/profile.php?id=61564240952795&mibextid=ZbWKwL'>
+              <Link href={socials.facebookServices} target="_blank">
                 <span className="text-main-600 hover:text-main-800">
                   <FaFacebook size={30} />
                 </span>
@@ -63,9 +64,9 @@ const page = () => {
 
         </div>
       </section>
-      <section className='bg-main-600 py-16'>
+      {/* <section className='bg-main-600 py-16'>
         <ContactForm />
-      </section>
+      </section> */}
     </main>
   );
 };

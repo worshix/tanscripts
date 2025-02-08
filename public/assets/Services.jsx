@@ -4,7 +4,7 @@ export default {
         {
             id:'ia-1',
             title:'Customized Production Automation',
-            image:'service1.jpg',
+            image:'Zimtech Engineering.png',
             alt:'',
             description:'We design and develop tailored automation solutions that meet the unique needs of our clients. Our expertise includes',
             details:[
