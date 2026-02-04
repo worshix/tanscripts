@@ -1,0 +1,427 @@
+import Link from "next/link";
+import Button from "@/components/Button";
+import SectionHeader from "@/components/SectionHeader";
+import Card from "@/components/Card";
+import ProductShowcase from "@/components/ProductShowcase";
+import { 
+  Settings, 
+  Cog, 
+  GraduationCap, 
+  ArrowRight, 
+  CheckCircle,
+  Sparkles,
+  BarChart3,
+  Users,
+  Award,
+  Clock,
+  Cpu
+} from "lucide-react";
+
+const services = [
+  {
+    title: "Industrial Automation",
+    description:
+      "Complete automation solutions for manufacturing and production lines, including PLC programming, SCADA systems, and process control.",
+    icon: <Settings className="w-6 h-6" />,
+  },
+  {
+    title: "Embedded Systems",
+    description:
+      "Custom embedded solutions from microcontroller programming to complex IoT systems, firmware development, and hardware integration.",
+    icon: <Cpu className="w-6 h-6" />,
+  },
+  {
+    title: "Mechanical Design",
+    description:
+      "Expert mechanical engineering for industrial applications, including CAD design, prototyping, and manufacturing support.",
+    icon: <Cog className="w-6 h-6" />,
+  },
+  {
+    title: "Professional Training",
+    description:
+      "Comprehensive training programs in PLC programming, embedded systems, and mechanical design for industrial automation.",
+    icon: <GraduationCap className="w-6 h-6" />,
+  },
+];
+
+const stats = [
+  { value: "500+", label: "Projects Completed", icon: <BarChart3 className="w-6 h-6" /> },
+  { value: "15+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
+  { value: "200+", label: "Clients Served", icon: <Users className="w-6 h-6" /> },
+  { value: "50+", label: "Expert Engineers", icon: <Award className="w-6 h-6" /> },
+];
+
+export default function Home() {
+  return (
+    <>
+      {/* Hero Section with Video Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="/videos/hero-poster.jpg"
+          >
+            <source src="/hero-vid.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-background/40" />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background" />
+        </div>
+        
+        {/* Animated background orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl z-[1]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-3xl z-[1]" />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-neon-cyan/10 rounded-full blur-3xl z-[1]" />
+        
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+          <div className="space-y-8">
+            <div 
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary-light text-sm backdrop-blur-sm"
+              data-aos="fade-down"
+              data-aos-delay="100"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Engineering the Future</span>
+            </div>
+            <h1 
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-[family-name:var(--font-orbitron)]"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <span className="text-foreground">Engineering</span>
+              <br />
+              <span className="text-gradient">Excellence</span>
+              <br />
+              <span className="text-foreground">for </span>
+              <span className="text-secondary neon-text-orange">Tomorrow</span>
+            </h1>
+            <p 
+              className="text-lg md:text-xl text-foreground leading-relaxed max-w-2xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              Zimtech Engineering delivers cutting-edge solutions in industrial
+              automation, embedded systems, and mechanical design. Partner with
+              us to transform your operations.
+            </p>
+            <div 
+              className="flex flex-wrap gap-4 pt-4 justify-center"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <Button href="/services" variant="primary" size="lg">
+                Explore Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button href="/contact" variant="outline" size="lg">
+                Get a Quote
+              </Button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-xs text-foreground-muted uppercase tracking-widest">Scroll</span>
+          <div className="w-6 h-10 border-2 border-foreground-muted/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="relative py-20 bg-background-secondary">
+        <div className="absolute inset-0 grid-pattern opacity-50" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div 
+                key={stat.label} 
+                className="text-center group"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 mb-4 group-hover:neon-box transition-all duration-300">
+                  <span className="text-primary-light">{stat.icon}</span>
+                </div>
+                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2 font-[family-name:var(--font-orbitron)]">
+                  {stat.value}
+                </div>
+                <div className="text-foreground-muted">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Product Showcase */}
+      <ProductShowcase
+        productName="NexGen Controller"
+        productTagline="The future of industrial automation is here"
+        productDescription="Experience unprecedented control and efficiency with our flagship NexGen Controller. Built with cutting-edge technology and designed for the demands of modern industry, it delivers real-time monitoring, IoT connectivity, and seamless integration with your existing systems."
+        features={[
+          "Real-time monitoring with sub-millisecond response times",
+          "Enterprise-grade security with encrypted communications",
+          "AI-powered predictive maintenance capabilities"
+        ]}
+        images={[
+          "/products/showcase-1.jpg",
+          "/products/showcase-2.jpg",
+          "/products/showcase-3.jpg"
+        ]}
+        productLink="/products/nexgen-controller"
+        badge="Featured Product"
+      />
+
+      {/* Services Section */}
+      <section className="relative py-24 gradient-mesh">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Our Services"
+            subtitle="Comprehensive engineering solutions tailored to meet your industrial automation and design needs."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <Card
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                href="/services"
+                aosDelay={index * 100}
+              />
+            ))}
+          </div>
+          <div className="text-center mt-16">
+            <Button href="/services" variant="primary">
+              View All Services
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Preview */}
+      <section className="relative py-24 bg-background-secondary">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Our Products"
+            subtitle="High-quality engineering products designed and manufactured to the highest standards."
+          />
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card
+              title="NexGen Controller"
+              description="Advanced industrial controller with IoT connectivity and real-time monitoring capabilities."
+              image="/products/nexgen.jpg"
+              tag="New"
+              href="/products"
+              aosDelay={0}
+            />
+            <Card
+              title="AutoPLC System"
+              description="Modular PLC system for flexible automation configurations in manufacturing environments."
+              image="/products/autoplc.jpg"
+              href="/products"
+              aosDelay={100}
+            />
+            <Card
+              title="SensorHub Pro"
+              description="Multi-sensor integration hub for comprehensive industrial data collection and analysis."
+              image="/products/sensorhub.jpg"
+              href="/products"
+              aosDelay={200}
+            />
+          </div>
+          <div className="text-center mt-16">
+            <Button href="/products" variant="primary">
+              View All Products
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/50 to-transparent" />
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="relative py-24 gradient-mesh">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-orbitron)] leading-tight"
+                data-aos="fade-right"
+              >
+                Why Choose{" "}
+                <span className="text-gradient">Zimtech</span>{" "}
+                <span className="text-secondary">Engineering?</span>
+              </h2>
+              <p 
+                className="text-foreground-muted text-lg leading-relaxed"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
+                With over 15 years of experience in industrial automation and
+                engineering, we bring unmatched expertise and dedication to every
+                project. Our team of certified engineers is committed to
+                delivering solutions that drive efficiency and innovation.
+              </p>
+              <ul className="space-y-4" data-aos="fade-right" data-aos-delay="200">
+                {[
+                  "Industry-leading expertise in automation technologies",
+                  "Custom solutions tailored to your specific needs",
+                  "24/7 technical support and maintenance",
+                  "Comprehensive training programs",
+                  "ISO-certified quality management",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-4 group">
+                    <div className="mt-1 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/40 group-hover:shadow-lg group-hover:shadow-secondary/20 transition-all">
+                      <CheckCircle className="w-4 h-4 text-secondary" />
+                    </div>
+                    <span className="text-foreground/80 group-hover:text-foreground transition-colors">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-4">
+                <Button href="/about" variant="primary">
+                  Learn More About Us
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </div>
+            <div className="relative" data-aos="fade-left" data-aos-delay="300">
+              <div className="relative w-full aspect-square max-w-lg mx-auto">
+                {/* Background glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
+                
+                {/* Main card */}
+                <div className="relative glass-card rounded-3xl p-8 h-full flex flex-col justify-center items-center text-center">
+                  <div className="w-24 h-24 rounded-2xl gradient-primary flex items-center justify-center mb-8 neon-box">
+                    <Award className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4 font-[family-name:var(--font-orbitron)]">
+                    15+ Years
+                  </h3>
+                  <p className="text-foreground-muted">
+                    Of engineering excellence and innovation, serving clients across industries worldwide.
+                  </p>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-primary pulse-glow" />
+                  <div className="absolute bottom-4 left-4 w-3 h-3 rounded-full bg-secondary pulse-glow" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Blog / Case Study */}
+      <section className="relative py-24 bg-background-secondary">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Latest Insights"
+            subtitle="Stay updated with our latest case studies, industry news, and engineering insights."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                tag: "Case Study",
+                tagColor: "bg-secondary/20 text-secondary border-secondary/30",
+                title: "Automating Assembly Line for Major Manufacturer",
+                description: "How we helped a leading manufacturer increase production efficiency by 40% through smart automation solutions.",
+              },
+              {
+                tag: "Product Update",
+                tagColor: "bg-primary/20 text-primary-light border-primary/30",
+                title: "Introducing the NexGen Controller v2.0",
+                description: "Discover the new features and improvements in our flagship industrial controller platform.",
+              },
+              {
+                tag: "Industry News",
+                tagColor: "bg-neon-cyan/20 text-neon-cyan border-neon-cyan/30",
+                title: "Trends in Industrial Automation for 2026",
+                description: "Explore the emerging trends shaping the future of industrial automation and smart manufacturing.",
+              },
+            ].map((post, index) => (
+              <div key={post.title} className="glass-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay={index * 100}>
+                <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 border ${post.tagColor}`}>
+                  {post.tag}
+                </span>
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary-light transition-colors font-[family-name:var(--font-orbitron)]">
+                  {post.title}
+                </h3>
+                <p className="text-foreground-muted mb-6 leading-relaxed">
+                  {post.description}
+                </p>
+                <Link 
+                  href="/blog" 
+                  className="inline-flex items-center gap-2 text-primary-light font-medium group-hover:gap-3 transition-all"
+                >
+                  Read More
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-16">
+            <Button href="/blog" variant="secondary">
+              View All Articles
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-24 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 gradient-primary" />
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+        
+        {/* Glow orbs */}
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-secondary/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary-light/30 rounded-full blur-3xl" />
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-[family-name:var(--font-orbitron)]"
+            data-aos="zoom-in"
+          >
+            Ready to Transform Your Operations?
+          </h2>
+          <p 
+            className="text-lg text-white/80 mb-10 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Contact us today to discuss your engineering needs and discover how
+            Zimtech Engineering can help drive your business forward.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+            <Link
+              href="/contact"
+              className="px-8 py-4 rounded-xl font-semibold text-primary bg-white hover:bg-white/90 transition-all hover:shadow-lg hover:shadow-white/20 inline-flex items-center gap-2"
+            >
+              Contact Us
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/services"
+              className="px-8 py-4 rounded-xl font-semibold text-white border-2 border-white/50 hover:bg-white/10 hover:border-white transition-all inline-flex items-center gap-2"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

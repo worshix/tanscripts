@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/
+
+# Host
+Host: https://www.zimtechengineering.co.zw
+
+# Sitemaps
+Sitemap: https://www.zimtechengineering.co.zw/sitemap.xml
