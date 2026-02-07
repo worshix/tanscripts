@@ -45,10 +45,10 @@ const services = [
 ];
 
 const stats = [
-  { value: "500+", label: "Projects Completed", icon: <BarChart3 className="w-6 h-6" /> },
-  { value: "15+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
+  { value: "25+", label: "Projects Completed", icon: <BarChart3 className="w-6 h-6" /> },
+  { value: "5+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
   { value: "200+", label: "Clients Served", icon: <Users className="w-6 h-6" /> },
-  { value: "50+", label: "Expert Engineers", icon: <Award className="w-6 h-6" /> },
+  { value: "12+", label: "Expert Engineers", icon: <Award className="w-6 h-6" /> },
 ];
 
 export default function Home() {
@@ -71,13 +71,13 @@ export default function Home() {
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-background/40" />
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background" />
+          <div className="absolute inset-0 bg-linear-to-b from-background/50 via-transparent to-background" />
         </div>
         
         {/* Animated background orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl z-[1]" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-3xl z-[1]" />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-neon-cyan/10 rounded-full blur-3xl z-[1]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl z-1" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-3xl z-1" />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-neon-cyan/10 rounded-full blur-3xl z-1" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
           <div className="space-y-8">

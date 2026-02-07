@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -41,9 +42,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/50">
-              <Zap className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/50">
+              <Image src="/zimtech_new_logo.svg" alt="Zimtech Logo" width={48} height={48} className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-wider text-gradient font-[family-name:var(--font-orbitron)]">
