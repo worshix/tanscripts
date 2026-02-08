@@ -275,13 +275,13 @@ const ProductShowcase = ({
             </div>
 
             {/* CTA Button */}
-            <Link 
+            {/* <Link 
               href={productLink}
               className="showcase-cta inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-neon-500 to-neon-600 rounded-xl text-dark-950 font-bold text-lg hover:shadow-lg hover:shadow-neon-500/30 hover:-translate-y-1 transition-all duration-300 group"
             >
               Explore {productName}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

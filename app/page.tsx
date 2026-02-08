@@ -164,21 +164,20 @@ export default function Home() {
 
       {/* Featured Product Showcase */}
       <ProductShowcase
-        productName="NexGen Controller"
-        productTagline="The future of industrial automation is here"
-        productDescription="Experience unprecedented control and efficiency with our flagship NexGen Controller. Built with cutting-edge technology and designed for the demands of modern industry, it delivers real-time monitoring, IoT connectivity, and seamless integration with your existing systems."
+        productName="Digital Book"
+        productTagline="The future of Learning"
+        productDescription="Experience unprecedented control and efficiency with our flagship Digital Book. Built with cutting-edge technology and designed for the demands of modern education, it delivers interactive content, seamless integration, and personalized learning experiences."
         features={[
-          "Real-time monitoring with sub-millisecond response times",
-          "Enterprise-grade security with encrypted communications",
-          "AI-powered predictive maintenance capabilities"
+          "Interactive content with multimedia support",
+          "Seamless integration with learning management systems",
+          "Personalized learning paths powered by AI"
         ]}
         images={[
-          "/products/showcase-1.jpg",
-          "/products/showcase-2.jpg",
-          "/products/showcase-3.jpg"
+          "/images/digital_book_1.jpg",
+          "/images/digital_book_2.jpg",
         ]}
-        productLink="/products/nexgen-controller"
-        badge="Featured Product"
+        productLink="/images/digital-book.png"
+        badge="Coming Soon"
       />
 
       {/* Services Section */}
@@ -290,7 +289,7 @@ export default function Home() {
                 data-aos="fade-right"
                 data-aos-delay="100"
               >
-                With over 15 years of experience in industrial automation and
+                With over 5 years of experience in industrial automation and
                 engineering, we bring unmatched expertise and dedication to every
                 project. Our team of certified engineers is committed to
                 delivering solutions that drive efficiency and innovation.
@@ -329,7 +328,7 @@ export default function Home() {
                     <Award className="w-12 h-12 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4 font-[family-name:var(--font-orbitron)]">
-                    15+ Years
+                    5+ Years
                   </h3>
                   <p className="text-foreground-muted">
                     Of engineering excellence and innovation, serving clients across industries worldwide.
