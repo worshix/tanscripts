@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import { Settings, Cpu, Cog, Zap, Database, FileText, CheckCircle, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Services | Zimtech Engineering",
@@ -24,6 +25,7 @@ const services = [
       "Robotics Integration",
     ],
     icon: <Settings className="w-10 h-10" />,
+    image:"/images/industrial-automation.jpg"
   },
   {
     id: "embedded-systems",
@@ -39,6 +41,7 @@ const services = [
       "Wireless Communication Protocols",
     ],
     icon: <Cpu className="w-10 h-10" />,
+    image:"/images/embedded-systems.jpg"
   },
   {
     id: "mechanical-design",
@@ -54,6 +57,7 @@ const services = [
       "Custom Machinery Design",
     ],
     icon: <Cog className="w-10 h-10" />,
+    image:"/images/mechanical-design.jpg"
   },
   {
     id: "electrical-engineering",
@@ -69,6 +73,7 @@ const services = [
       "Safety System Design",
     ],
     icon: <Zap className="w-10 h-10" />,
+    image:"/images/electrical-engineering.jpg"
   },
   {
     id: "system-integration",
@@ -84,6 +89,7 @@ const services = [
       "Industry 4.0 Implementation",
     ],
     icon: <Database className="w-10 h-10" />,
+    image:"/images/system-integration.jpg"
   },
   {
     id: "consulting",
@@ -99,6 +105,7 @@ const services = [
       "Energy Audits",
     ],
     icon: <FileText className="w-10 h-10" />,
+    image:"/images/engineering-consultancy.jpg"
   },
 ];
 
@@ -165,12 +172,13 @@ export default function ServicesPage() {
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/10 rounded-3xl blur-2xl" />
-                    <div className="relative glass-card rounded-3xl h-80 flex flex-col items-center justify-center">
-                      <div className="w-24 h-24 rounded-2xl bg-primary/10 flex items-center justify-center text-primary-light mb-4">
-                        {service.icon}
-                      </div>
-                      <p className="text-foreground-muted text-sm">Service Image</p>
-                    </div>
+                    <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={500}
+                    height={300}
+                    className="rounded-2xl object-cover relative z-10"
+                    />
                   </div>
                 </div>
               </div>
