@@ -127,18 +127,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <head>
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebsiteJsonLd />
       </head>
       <body
-        className={`${orbitron.variable} ${rajdhani.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${orbitron.variable} ${rajdhani.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
       >
         <AOSProvider />
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen overflow-x-hidden">{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>
