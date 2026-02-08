@@ -393,7 +393,7 @@ export default function SolarInstallationPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/50 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="Solar Packages"
+            title="Some of Our Solar Packages"
             subtitle="Pre-configured solar systems for every need. All packages include professional installation."
           />
 

@@ -1,29 +1,32 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { ShoppingCart, Eye } from "lucide-react";
+import { Eye } from "lucide-react";
 import { Product, formatPrice } from "@/lib/solar/data";
 import Button from "@/components/Button";
+import Lightbox from "@/components/solar/Lightbox";
 
 interface ProductCardProps {
   product: Product;
   onAddToQuote?: (product: Product) => void;
-  onViewDetails?: (product: Product) => void;
   aosDelay?: number;
 }
 
 export default function ProductCard({
   product,
   onAddToQuote,
-  onViewDetails,
   aosDelay = 0,
 }: ProductCardProps) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
   return (
-    <div
-      className="glass-card rounded-2xl overflow-hidden group h-full flex flex-col"
-      data-aos="fade-up"
-      data-aos-delay={aosDelay}
-    >
+    <>
+      <div
+        className="glass-card rounded-2xl overflow-hidden group h-full flex flex-col"
+        data-aos="fade-up"
+        data-aos-delay={aosDelay}
+      >
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-background-tertiary">
         <Image
@@ -81,19 +84,28 @@ export default function ProductCard({
             className="flex-1"
             onClick={() => onAddToQuote?.(product)}
           >
-            <ShoppingCart className="w-4 h-4 mr-1.5" />
-            Add to Quote
+            Buy Now
           </Button>
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => onViewDetails?.(product)}
+            onClick={() => setLightboxOpen(true)}
             className="px-3"
+            aria-label="View product image"
           >
             <Eye className="w-4 h-4" />
           </Button>
         </div>
       </div>
     </div>
+
+    {/* Lightbox for full image view */}
+    <Lightbox
+      images={[product.image]}
+      isOpen={lightboxOpen}
+      onClose={() => setLightboxOpen(false)}
+      title={product.name}
+    />
+  </>
   );
 }

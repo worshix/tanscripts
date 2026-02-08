@@ -10,82 +10,92 @@ export const metadata: Metadata = {
     "Join our team of engineering professionals. Explore career opportunities at Zimtech Engineering.",
 };
 
-const openPositions = [
-  {
-    id: "senior-automation-engineer",
-    title: "Senior Automation Engineer",
-    department: "Engineering",
-    location: "Harare, Zimbabwe",
-    type: "Full-time",
-    description:
-      "We are looking for an experienced automation engineer to lead complex industrial automation projects.",
-    requirements: [
-      "5+ years experience in industrial automation",
-      "Proficiency in PLC programming (Siemens, Allen-Bradley)",
-      "Experience with SCADA systems",
-      "Strong project management skills",
-    ],
-  },
-  {
-    id: "embedded-systems-developer",
-    title: "Embedded Systems Developer",
-    department: "Product Development",
-    location: "Harare, Zimbabwe",
-    type: "Full-time",
-    description:
-      "Join our product team to develop cutting-edge embedded systems and IoT solutions.",
-    requirements: [
-      "3+ years embedded C/C++ development",
-      "Experience with ARM microcontrollers",
-      "Knowledge of communication protocols (I2C, SPI, UART)",
-      "RTOS experience preferred",
-    ],
-  },
-  {
-    id: "mechanical-design-engineer",
-    title: "Mechanical Design Engineer",
-    department: "Engineering",
-    location: "Harare, Zimbabwe",
-    type: "Full-time",
-    description:
-      "Design mechanical systems for industrial automation applications.",
-    requirements: [
-      "3+ years mechanical design experience",
-      "Proficiency in SolidWorks or equivalent CAD",
-      "Understanding of manufacturing processes",
-      "Experience with pneumatics/hydraulics",
-    ],
-  },
-  {
-    id: "project-coordinator",
-    title: "Project Coordinator",
-    department: "Operations",
-    location: "Harare, Zimbabwe",
-    type: "Full-time",
-    description:
-      "Coordinate engineering projects and ensure timely delivery of client solutions.",
-    requirements: [
-      "2+ years project coordination experience",
-      "Strong organizational skills",
-      "Excellent communication abilities",
-      "Technical background preferred",
-    ],
-  },
-  {
-    id: "sales-engineer",
-    title: "Technical Sales Engineer",
-    department: "Sales",
-    location: "Harare, Zimbabwe",
-    type: "Full-time",
-    description:
-      "Drive sales of our engineering solutions and products to industrial clients.",
-    requirements: [
-      "Engineering degree or equivalent",
-      "2+ years technical sales experience",
-      "Strong presentation skills",
-      "Knowledge of industrial automation",
-    ],
-  },
+interface Position {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  description: string;
+  requirements: string[];
+}
+
+const openPositions: Position[] = [
+  // {
+  //   id: "senior-automation-engineer",
+  //   title: "Senior Automation Engineer",
+  //   department: "Engineering",
+  //   location: "Harare, Zimbabwe",
+  //   type: "Full-time",
+  //   description:
+  //     "We are looking for an experienced automation engineer to lead complex industrial automation projects.",
+  //   requirements: [
+  //     "5+ years experience in industrial automation",
+  //     "Proficiency in PLC programming (Siemens, Allen-Bradley)",
+  //     "Experience with SCADA systems",
+  //     "Strong project management skills",
+  //   ],
+  // },
+  // {
+  //   id: "embedded-systems-developer",
+  //   title: "Embedded Systems Developer",
+  //   department: "Product Development",
+  //   location: "Harare, Zimbabwe",
+  //   type: "Full-time",
+  //   description:
+  //     "Join our product team to develop cutting-edge embedded systems and IoT solutions.",
+  //   requirements: [
+  //     "3+ years embedded C/C++ development",
+  //     "Experience with ARM microcontrollers",
+  //     "Knowledge of communication protocols (I2C, SPI, UART)",
+  //     "RTOS experience preferred",
+  //   ],
+  // },
+  // {
+  //   id: "mechanical-design-engineer",
+  //   title: "Mechanical Design Engineer",
+  //   department: "Engineering",
+  //   location: "Harare, Zimbabwe",
+  //   type: "Full-time",
+  //   description:
+  //     "Design mechanical systems for industrial automation applications.",
+  //   requirements: [
+  //     "3+ years mechanical design experience",
+  //     "Proficiency in SolidWorks or equivalent CAD",
+  //     "Understanding of manufacturing processes",
+  //     "Experience with pneumatics/hydraulics",
+  //   ],
+  // },
+  // {
+  //   id: "project-coordinator",
+  //   title: "Project Coordinator",
+  //   department: "Operations",
+  //   location: "Harare, Zimbabwe",
+  //   type: "Full-time",
+  //   description:
+  //     "Coordinate engineering projects and ensure timely delivery of client solutions.",
+  //   requirements: [
+  //     "2+ years project coordination experience",
+  //     "Strong organizational skills",
+  //     "Excellent communication abilities",
+  //     "Technical background preferred",
+  //   ],
+  // },
+  // {
+  //   id: "sales-engineer",
+  //   title: "Technical Sales Engineer",
+  //   department: "Sales",
+  //   location: "Harare, Zimbabwe",
+  //   type: "Full-time",
+  //   description:
+  //     "Drive sales of our engineering solutions and products to industrial clients.",
+  //   requirements: [
+  //     "Engineering degree or equivalent",
+  //     "2+ years technical sales experience",
+  //     "Strong presentation skills",
+  //     "Knowledge of industrial automation",
+  //   ],
+  // },
 ];
 
 const benefits = [
@@ -183,57 +193,82 @@ export default function CareersPage() {
             title="Open Positions"
             subtitle="Explore our current job openings and find the right opportunity for you."
           />
-          <div className="space-y-6">
-            {openPositions.map((position, index) => (
-              <div
-                key={position.id}
-                className="glass-card rounded-2xl p-6 group hover:border-primary/50 transition-all"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <span className="bg-primary/20 text-primary-light text-xs font-medium px-3 py-1.5 rounded-lg border border-primary/30">
-                        {position.department}
-                      </span>
-                      <span className="bg-secondary/20 text-secondary text-xs font-medium px-3 py-1.5 rounded-lg border border-secondary/30 flex items-center gap-1">
-                        <Briefcase className="w-3 h-3" />
-                        {position.type}
-                      </span>
-                      <span className="bg-foreground/10 text-foreground-muted text-xs font-medium px-3 py-1.5 rounded-lg flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {position.location}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-3 font-[family-name:var(--font-orbitron)] group-hover:text-primary-light transition-colors">
-                      {position.title}
-                    </h3>
-                    <p className="text-foreground-muted mb-4 leading-relaxed">{position.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {position.requirements.slice(0, 3).map((req) => (
-                        <span
-                          key={req}
-                          className="text-xs text-foreground/70 bg-background px-3 py-1.5 rounded-lg border border-primary/10"
-                        >
-                          {req}
+          
+          {openPositions.length > 0 ? (
+            <div className="space-y-6">
+              {openPositions.map((position, index) => (
+                <div
+                  key={position.id}
+                  className="glass-card rounded-2xl p-6 group hover:border-primary/50 transition-all"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        <span className="bg-primary/20 text-primary-light text-xs font-medium px-3 py-1.5 rounded-lg border border-primary/30">
+                          {position.department}
                         </span>
-                      ))}
+                        <span className="bg-secondary/20 text-secondary text-xs font-medium px-3 py-1.5 rounded-lg border border-secondary/30 flex items-center gap-1">
+                          <Briefcase className="w-3 h-3" />
+                          {position.type}
+                        </span>
+                        <span className="bg-foreground/10 text-foreground-muted text-xs font-medium px-3 py-1.5 rounded-lg flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />
+                          {position.location}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-3 font-[family-name:var(--font-orbitron)] group-hover:text-primary-light transition-colors">
+                        {position.title}
+                      </h3>
+                      <p className="text-foreground-muted mb-4 leading-relaxed">{position.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {position.requirements.slice(0, 3).map((req) => (
+                          <span
+                            key={req}
+                            className="text-xs text-foreground/70 bg-background px-3 py-1.5 rounded-lg border border-primary/10"
+                          >
+                            {req}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex lg:flex-col gap-3">
-                    <Link
-                      href={`/contact?subject=careers&position=${position.id}`}
-                      className="px-6 py-3 btn-neon rounded-xl font-semibold text-center text-white inline-flex items-center gap-2"
-                    >
-                      <span className="relative z-10">Apply Now</span>
-                      <ArrowRight className="w-4 h-4 relative z-10" />
-                    </Link>
+                    <div className="flex lg:flex-col gap-3">
+                      <Link
+                        href={`/contact?subject=careers&position=${position.id}`}
+                        className="px-6 py-3 btn-neon rounded-xl font-semibold text-center text-white inline-flex items-center gap-2"
+                      >
+                        <span className="relative z-10">Apply Now</span>
+                        <ArrowRight className="w-4 h-4 relative z-10" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          ) : (
+            <div 
+              className="glass-card rounded-2xl p-12 text-center"
+              data-aos="fade-up"
+            >
+              <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
+                <Briefcase className="w-10 h-10 text-primary-light" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3 font-[family-name:var(--font-orbitron)]">
+                No Open Positions
+              </h3>
+              <p className="text-foreground-muted max-w-md mx-auto mb-6">
+                There are currently no open positions available. However, we&apos;re always interested in connecting with talented individuals.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 btn-neon rounded-xl font-semibold text-white"
+              >
+                Send Your CV
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          )}
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/50 to-transparent" />
       </section>
