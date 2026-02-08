@@ -5,6 +5,8 @@ import SectionHeader from "@/components/SectionHeader";
 import Card from "@/components/Card";
 import ProductShowcase from "@/components/ProductShowcase";
 import { products } from "@/lib/data/products.js";
+import { posts } from "@/lib/data/blog.js";
+import { caseStudies } from "@/lib/data/case-studies.js";
 import { 
   Settings, 
   Cog, 
@@ -352,47 +354,78 @@ export default function Home() {
             title="Latest Insights"
             subtitle="Stay updated with our latest case studies, industry news, and engineering insights."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                tag: "Case Study",
-                tagColor: "bg-secondary/20 text-secondary border-secondary/30",
-                title: "Automating Assembly Line for Major Manufacturer",
-                description: "How we helped a leading manufacturer increase production efficiency by 40% through smart automation solutions.",
-              },
-              {
-                tag: "Product Update",
-                tagColor: "bg-primary/20 text-primary-light border-primary/30",
-                title: "Introducing the NexGen Controller v2.0",
-                description: "Discover the new features and improvements in our flagship industrial controller platform.",
-              },
-              {
-                tag: "Industry News",
-                tagColor: "bg-neon-cyan/20 text-neon-cyan border-neon-cyan/30",
-                title: "Trends in Industrial Automation for 2026",
-                description: "Explore the emerging trends shaping the future of industrial automation and smart manufacturing.",
-              },
-            ].map((post, index) => (
-              <div key={post.title} className="glass-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay={index * 100}>
-                <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 border ${post.tagColor}`}>
-                  {post.tag}
-                </span>
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary-light transition-colors font-[family-name:var(--font-orbitron)]">
-                  {post.title}
-                </h3>
-                <p className="text-foreground-muted mb-6 leading-relaxed">
-                  {post.description}
-                </p>
-                <Link 
-                  href="/blog" 
-                  className="inline-flex items-center gap-2 text-primary-light font-medium group-hover:gap-3 transition-all"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+          {(() => {
+            // Combine blog posts and case studies into a single array
+            const blogItems = Object.entries(posts).map(([slug, post]) => ({
+              type: 'blog' as const,
+              slug,
+              tag: post.category,
+              tagColor: post.category === "Case Study" 
+                ? "bg-secondary/20 text-secondary border-secondary/30"
+                : post.category === "Product Update"
+                ? "bg-primary/20 text-primary-light border-primary/30"
+                : post.category === "Research"
+                ? "bg-cyan-500/20 text-cyan-400 border-cyan-500/30"
+                : "bg-neon-cyan/20 text-neon-cyan border-neon-cyan/30",
+              title: post.title,
+              description: post.content[0].substring(0, 150) + "...",
+              date: new Date(post.date),
+            }));
+            
+            const caseStudyItems = Object.entries(caseStudies).map(([slug, study]) => ({
+              type: 'case-study' as const,
+              slug,
+              tag: "Case Study",
+              tagColor: "bg-secondary/20 text-secondary border-secondary/30",
+              title: study.title,
+              description: study.description,
+              date: new Date(), // Case studies don't have dates, use current
+            }));
+            
+            // Combine and get latest 3
+            const allItems = [...blogItems, ...caseStudyItems]
+              .sort((a, b) => b.date.getTime() - a.date.getTime())
+              .slice(0, 3);
+            
+            if (allItems.length === 0) {
+              return (
+                <div className="text-center py-16" data-aos="fade-up">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl gradient-primary flex items-center justify-center neon-box">
+                    <Sparkles className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gradient mb-4 font-[family-name:var(--font-orbitron)]">Coming Soon</h3>
+                  <p className="text-foreground-muted max-w-md mx-auto">
+                    Check back soon for the latest insights, case studies, and industry news.
+                  </p>
+                </div>
+              );
+            }
+            
+            return (
+              <div className={`grid gap-8 ${allItems.length === 1 ? 'md:grid-cols-1 max-w-md mx-auto' : allItems.length === 2 ? 'md:grid-cols-2 max-w-3xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+                {allItems.map((item, index) => (
+                  <div key={item.slug} className="glass-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 border ${item.tagColor}`}>
+                      {item.tag}
+                    </span>
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary-light transition-colors font-[family-name:var(--font-orbitron)]">
+                      {item.title}
+                    </h3>
+                    <p className="text-foreground-muted mb-6 leading-relaxed line-clamp-3">
+                      {item.description}
+                    </p>
+                    <Link 
+                      href={item.type === 'blog' ? `/blog/${item.slug}` : `/case-studies/${item.slug}`}
+                      className="inline-flex items-center gap-2 text-primary-light font-medium group-hover:gap-3 transition-all"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            );
+          })()}
           <div className="text-center mt-16">
             <Button href="/blog" variant="secondary">
               View All Articles

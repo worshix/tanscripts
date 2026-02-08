@@ -10,26 +10,24 @@ export const contactConfig = {
   
   // Address
   address: {
-    street: "123 Industrial Park Drive",
+    street: "P. O. Box BE 277, Belvedere, Harare",
     city: "Harare",
     country: "Zimbabwe",
-    full: "123 Industrial Park Drive, Harare, Zimbabwe",
+    full: "P. O. Box BE 277, Belvedere, Harare, Zimbabwe",
   },
   
   // Phone Numbers
   phone: {
-    primary: "+263 (4) 123 4567",
-    secondary: "+263 (4) 123 4568",
-    whatsapp: "+263771234567", // Without spaces for WhatsApp link
-    whatsappDisplay: "+263 77 123 4567", // Display format
+    primary: "+263 71 366 4345",
+    secondary: "+263 78 432 3921",
+    whatsapp: "+263713664345", // Without spaces for WhatsApp link
+    whatsappDisplay: "+263 71 366 4345", // Display format
   },
   
   // Email Addresses
   email: {
-    info: "info@zimtechengineering.com",
-    sales: "sales@zimtechengineering.com",
-    support: "support@zimtechengineering.com",
-    careers: "careers@zimtechengineering.com",
+    info: "info@zimtechengineering.co.zw",
+    training:"training@zimtechengineering.co.zw"
   },
   
   // Business Hours
