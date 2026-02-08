@@ -3,65 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FileText, Clock, ArrowRight, Sparkles, BookOpen, Newspaper, Wrench } from "lucide-react";
+import { posts as postsData } from "@/lib/data/blog.js";
 
-const posts = [
-  {
-    slug: "automating-assembly-line-case-study",
-    title: "Automating Assembly Line for Major Manufacturer",
-    excerpt:
-      "How we helped a leading manufacturer increase production efficiency by 40% through smart automation solutions.",
-    category: "Case Study",
-    date: "January 28, 2026",
-    readTime: "8 min read",
-  },
-  {
-    slug: "introducing-the-nexgen-controller",
-    title: "Introducing the NexGen Controller v2.0",
-    excerpt:
-      "Discover the new features and improvements in our flagship industrial controller platform.",
-    category: "Product Update",
-    date: "January 20, 2026",
-    readTime: "5 min read",
-  },
-  {
-    slug: "trends-in-industrial-automation-2026",
-    title: "Trends in Industrial Automation for 2026",
-    excerpt:
-      "Explore the emerging trends shaping the future of industrial automation and smart manufacturing.",
-    category: "Industry News",
-    date: "January 15, 2026",
-    readTime: "6 min read",
-  },
-  {
-    slug: "plc-programming-best-practices",
-    title: "PLC Programming Best Practices for Modern Automation",
-    excerpt:
-      "Learn the essential best practices for developing maintainable and efficient PLC programs.",
-    category: "Technical",
-    date: "January 10, 2026",
-    readTime: "10 min read",
-  },
-  {
-    slug: "iot-integration-manufacturing",
-    title: "IoT Integration in Manufacturing: A Complete Guide",
-    excerpt:
-      "A comprehensive guide to implementing IoT solutions in manufacturing environments.",
-    category: "Technical",
-    date: "January 5, 2026",
-    readTime: "12 min read",
-  },
-  {
-    slug: "energy-efficiency-automation",
-    title: "Achieving Energy Efficiency Through Automation",
-    excerpt:
-      "How smart automation systems can significantly reduce energy consumption in industrial facilities.",
-    category: "Industry News",
-    date: "December 28, 2025",
-    readTime: "7 min read",
-  },
-];
+// Transform posts record to array for display
+const posts = Object.entries(postsData).map(([slug, post]) => ({
+  slug,
+  title: post.title,
+  excerpt: post.content[0].substring(0, 150) + "...",
+  category: post.category,
+  date: post.date,
+  readTime: post.readTime,
+}));
 
-const categories = ["All", "Case Study", "Product Update", "Industry News", "Technical"];
+// Extract unique categories from posts data
+const categories = ["All", ...Array.from(new Set(Object.values(postsData).map(p => p.category)))];
 
 // Get icon based on category
 function getCategoryIcon(category: string) {
@@ -70,6 +25,7 @@ function getCategoryIcon(category: string) {
     case "Product Update": return Sparkles;
     case "Technical": return Wrench;
     case "Industry News": return Newspaper;
+    case "Research": return BookOpen;
     default: return FileText;
   }
 }
