@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import Card from "@/components/Card";
 import ProductShowcase from "@/components/ProductShowcase";
+import { products } from "@/lib/data/products.js";
 import { 
   Settings, 
   Cog, 
@@ -215,29 +217,50 @@ export default function Home() {
             title="Our Products"
             subtitle="High-quality engineering products designed and manufactured to the highest standards."
           />
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card
-              title="NexGen Controller"
-              description="Advanced industrial controller with IoT connectivity and real-time monitoring capabilities."
-              image="/products/nexgen.jpg"
-              tag="New"
-              href="/products"
-              aosDelay={0}
-            />
-            <Card
-              title="AutoPLC System"
-              description="Modular PLC system for flexible automation configurations in manufacturing environments."
-              image="/products/autoplc.jpg"
-              href="/products"
-              aosDelay={100}
-            />
-            <Card
-              title="SensorHub Pro"
-              description="Multi-sensor integration hub for comprehensive industrial data collection and analysis."
-              image="/products/sensorhub.jpg"
-              href="/products"
-              aosDelay={200}
-            />
+          <div className={`grid gap-8 ${Object.keys(products).length === 1 ? 'md:grid-cols-1 max-w-md mx-auto' : Object.keys(products).length === 2 ? 'md:grid-cols-2 max-w-3xl mx-auto' : 'md:grid-cols-3'}`}>
+            {Object.values(products).slice(0, 3).map((product, index) => (
+              <div
+                key={product.id}
+                className="glass-card rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={product.images.main}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {product.isNew && (
+                    <span className="absolute top-4 right-4 bg-secondary/90 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 border border-secondary z-10">
+                      <Sparkles className="w-3 h-3" />
+                      New
+                    </span>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background-secondary/80 to-transparent" />
+                </div>
+                <div className="p-6">
+                  <span className="inline-block bg-primary/20 text-primary-light text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-primary/30">
+                    {product.category}
+                  </span>
+                  <h3 className="text-xl font-bold text-foreground mb-2 font-[family-name:var(--font-orbitron)] group-hover:text-primary-light transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-foreground-muted mb-4 line-clamp-2">{product.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-secondary font-bold">${product.price.base}</span>
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="text-primary-light hover:text-secondary transition-colors flex items-center gap-1 text-sm font-medium"
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="text-center mt-16">
             <Button href="/products" variant="primary">

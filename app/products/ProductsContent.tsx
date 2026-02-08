@@ -1,110 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Cpu, CheckCircle, Sparkles, Settings, Activity, Zap, Shield, Database, Package } from "lucide-react";
+import { products as productsData } from "@/lib/data/products.js";
 
-const products = [
-  {
-    id: "nexgen-controller",
-    name: "NexGen Controller",
-    category: "Controllers",
-    image: "/products/nexgen.jpg",
-    description:
-      "Advanced industrial controller with IoT connectivity and real-time monitoring capabilities. Perfect for modern automation applications.",
-    features: [
-      "Real-time data processing",
-      "IoT connectivity",
-      "Remote monitoring",
-      "Modular expansion",
-    ],
-    price: "2,450",
-    isNew: true,
-  },
-  {
-    id: "autoplc-system",
-    name: "AutoPLC System",
-    category: "Automation",
-    image: "/products/autoplc.jpg",
-    description:
-      "Modular PLC system for flexible automation configurations in manufacturing environments. Scalable and reliable.",
-    features: [
-      "Modular design",
-      "Easy programming",
-      "High reliability",
-      "Industry standard",
-    ],
-    price: "3,200",
-    isNew: false,
-  },
-  {
-    id: "sensorhub-pro",
-    name: "SensorHub Pro",
-    category: "Sensors",
-    image: "/products/sensorhub.jpg",
-    description:
-      "Multi-sensor integration hub for comprehensive industrial data collection and analysis. Supports multiple protocols.",
-    features: [
-      "Multi-protocol support",
-      "Data aggregation",
-      "Cloud integration",
-      "Edge computing",
-    ],
-    price: "4,850",
-    isNew: false,
-  },
-  {
-    id: "motion-master",
-    name: "Motion Master 3000",
-    category: "Motion Control",
-    image: "/products/motion-master.jpg",
-    description:
-      "Precision motion control system for high-speed manufacturing applications. Delivers exceptional accuracy and performance.",
-    features: [
-      "Sub-micron precision",
-      "Multi-axis control",
-      "High-speed operation",
-      "Servo integration",
-    ],
-    price: "8,900",
-    isNew: true,
-  },
-  {
-    id: "power-guard",
-    name: "PowerGuard UPS",
-    category: "Power Systems",
-    image: "/products/power-guard.jpg",
-    description:
-      "Industrial-grade uninterruptible power supply with intelligent monitoring and management capabilities.",
-    features: [
-      "99.9% uptime",
-      "Hot-swappable batteries",
-      "Remote management",
-      "Surge protection",
-    ],
-    price: "12,500",
-    isNew: false,
-  },
-  {
-    id: "data-logger",
-    name: "DataLogger X200",
-    category: "Data Acquisition",
-    image: "/products/data-logger.jpg",
-    description:
-      "High-performance data acquisition system for industrial monitoring and process optimization applications.",
-    features: [
-      "100+ input channels",
-      "High sampling rate",
-      "Local storage",
-      "API integration",
-    ],
-    price: "6,750",
-    isNew: false,
-  },
-];
+// Transform products record to array for display
+const products = Object.values(productsData).map(product => ({
+  id: product.id,
+  name: product.name,
+  category: product.category,
+  image: product.images.main,
+  description: product.description,
+  features: product.features.slice(0, 4),
+  price: product.price.base,
+  isNew: product.isNew,
+}));
 
-const categories = ["All", "Controllers", "Automation", "Sensors", "Motion Control", "Power Systems", "Data Acquisition"];
+// Extract unique categories from products data
+const categories = ["All", ...Array.from(new Set(Object.values(productsData).map(p => p.category)))];
 
 // Get icon based on category
 function getCategoryIcon(category: string) {
