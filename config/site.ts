@@ -3,6 +3,8 @@
  * Central source of truth for all SEO-related settings
  */
 
+import {contactConfig} from "@/config/contact";
+
 export const siteConfig = {
   // Basic site info
   name: "Zimtech Engineering",
@@ -13,9 +15,9 @@ export const siteConfig = {
   
   // URLs
   url: "https://zimtechengineering.co.zw",
-  ogImage: "/images/og-image.jpg",
-  twitterImage: "/images/twitter-image.jpg",
-  logo: "/images/logo.png",
+  ogImage: "/zimtech-engineering-logo-purple-bg.png",
+  twitterImage: "/zimtech-engineering-logo-purple-bg.png",
+  logo: "/zimtech-engineering-logo-purple-bg.png",
   
   // Location
   locale: "en_ZW",
@@ -31,10 +33,8 @@ export const siteConfig = {
   
   // Social handles
   social: {
-    twitter: "@zimtecheng",
-    facebook: "zimtechengineering",
-    linkedin: "zimtech-engineering",
-    instagram: "zimtechengineering",
+    facebook: contactConfig.social.facebook,
+    instagram: contactConfig.social.instagram,
   },
   
   // Keywords by category
@@ -56,6 +56,7 @@ export const siteConfig = {
       "renewable energy Zimbabwe",
       "DEYE inverters",
       "solar power solutions",
+      "Sumry inverters",
     ],
     training: [
       "PLC training Zimbabwe",

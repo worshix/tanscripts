@@ -79,8 +79,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Industrial Automation & Engineering Solutions`,
     description: siteConfig.description,
-    site: siteConfig.social.twitter,
-    creator: siteConfig.social.twitter,
     images: [siteConfig.twitterImage],
   },
   
