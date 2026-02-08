@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
-import { Settings, Cpu, Cog, Zap, Database, FileText, CheckCircle, ArrowRight } from "lucide-react";
+import { Settings, Cpu, Cog, Zap, Database, FileText, CheckCircle, ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { siteConfig, getCanonicalUrl } from "@/config/site";
 
@@ -62,6 +62,21 @@ const services = [
     ],
     icon: <Cpu className="w-10 h-10" />,
     image:"/images/embedded-systems.jpg"
+  },
+  {
+    id:"solar-installation",
+    title:"Solar Installation",
+    description:"Professional solar installation services in Zimbabwe. Solar panels, inverters, batteries, and complete packages from 1.5kVA to commercial scale. Free quotes and expert installation by Zimtech Engineering.",
+    details:[
+      "Residential Solar Systems",
+      "Commercial Solar Solutions",
+      "Off-Grid & Hybrid Systems",
+      "Solar Panel Installation",
+      "Inverter & Battery Setup",
+      "Maintenance & Support"
+    ],
+    icon: <Sparkles className="w-10 h-10" />,
+    image:"/images/solar.png"
   },
   {
     id: "mechanical-design",

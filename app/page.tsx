@@ -73,6 +73,12 @@ const services = [
       "Comprehensive training programs in PLC programming, embedded systems, and mechanical design for industrial automation.",
     icon: <GraduationCap className="w-6 h-6" />,
   },
+  {
+    title: "Solar Installation",
+    description:
+    "Professional solar installation services in Zimbabwe. Solar panels, inverters, batteries, and complete packages from 1.5kVA to commercial scale. Free quotes and expert installation by Zimtech Engineering.",
+    icon: <Sparkles className="w-6 h-6" />,
+  }
 ];
 
 const stats = [
