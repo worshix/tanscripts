@@ -8,10 +8,10 @@ export default function WhatsAppButton() {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
       {/* Tooltip */}
       {isTooltipVisible && (
-        <div className="relative glass-card rounded-2xl p-4 max-w-xs animate-in fade-in slide-in-from-bottom-2 duration-300">
+        <div className="relative glass-card rounded-2xl p-4 max-w-[calc(100vw-2rem)] sm:max-w-xs animate-in fade-in slide-in-from-bottom-2 duration-300">
           <button
             onClick={() => setIsTooltipVisible(false)}
             className="absolute top-2 right-2 p-1 rounded-full hover:bg-primary/20 transition-colors"
