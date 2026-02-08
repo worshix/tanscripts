@@ -38,24 +38,24 @@ const values = [
 
 const team = [
   {
-    name: "Dr. James Zimba",
-    role: "Founder & CEO",
-    description: "25+ years in industrial automation and engineering leadership.",
+    name: "Eng. Tanaka Dzapasi",
+    role: "Managing Director",
+    description: "5+ years in industrial automation and engineering leadership.",
   },
   {
-    name: "Sarah Mitchell",
-    role: "Chief Technology Officer",
-    description: "Expert in embedded systems and IoT solutions.",
+    name: "Worship L Mugomeza",
+    role: "Lead Software Engineer",
+    description: "Expert in control systems, PLC programming, and IoT solutions.",
   },
   {
-    name: "Michael Chen",
-    role: "Head of Engineering",
+    name: "Pascal Chokuda",
+    role: "Head of Engineering Design",
     description: "Specializes in mechanical design and manufacturing processes.",
   },
   {
-    name: "Emily Rodriguez",
-    role: "Director of Training",
-    description: "Develops comprehensive training programs for industry professionals.",
+    name: "Tinarwo Mutwira",
+    role: "Lead Embeded Systems Engineer",
+    description: "Skilled in embedded systems, microcontroller programming, and hardware integration.",
   },
 ];
 
@@ -96,7 +96,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-foreground-muted leading-relaxed">
                 <p>
-                  Founded in 2010, Zimtech Engineering began with a simple mission:
+                  Founded in 2021, Zimtech Engineering began with a simple mission:
                   to provide world-class engineering solutions that help businesses
                   achieve operational excellence. What started as a small team of
                   passionate engineers has grown into a leading force in industrial
@@ -120,16 +120,16 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
                 <div className="relative glass-card rounded-3xl h-full flex flex-col items-center justify-center text-center p-8">
                   <div className="text-6xl font-bold text-gradient font-[family-name:var(--font-orbitron)] mb-4">
-                    2010
+                    2021
                   </div>
                   <p className="text-foreground-muted">Year Founded</p>
                   <div className="mt-8 grid grid-cols-2 gap-6 w-full">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-light font-[family-name:var(--font-orbitron)]">500+</div>
+                      <div className="text-3xl font-bold text-primary-light font-[family-name:var(--font-orbitron)]">100+</div>
                       <p className="text-sm text-foreground-muted">Projects</p>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-secondary font-[family-name:var(--font-orbitron)]">50+</div>
+                      <div className="text-3xl font-bold text-secondary font-[family-name:var(--font-orbitron)]">10+</div>
                       <p className="text-sm text-foreground-muted">Engineers</p>
                     </div>
                   </div>
