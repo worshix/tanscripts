@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Linkedin, Instagram, Github, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { contactConfig, formatPhoneLink, formatEmailLink } from "@/config/contact";
 
 const footerLinks = {
@@ -133,24 +133,6 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href={contactConfig.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-xl border border-primary/20 flex items-center justify-center text-foreground-muted hover:text-primary hover:border-primary hover:bg-primary/10"
-              aria-label="Follow us on Twitter"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a
-              href={contactConfig.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-xl border border-primary/20 flex items-center justify-center text-foreground-muted hover:text-primary hover:border-primary hover:bg-primary/10"
-              aria-label="Connect with us on LinkedIn"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-            <a
               href={contactConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
@@ -160,13 +142,13 @@ export default function Footer() {
               <Instagram className="w-4 h-4" />
             </a>
             <a
-              href={contactConfig.social.github}
+              href={contactConfig.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-xl border border-primary/20 flex items-center justify-center text-foreground-muted hover:text-primary hover:border-primary hover:bg-primary/10"
               aria-label="Follow us on GitHub"
             >
-              <Github className="w-4 h-4" />
+              <Facebook className="w-4 h-4" />
             </a>
           </div>
         </div>

@@ -19,7 +19,7 @@ const contactInfo = [
   },
   {
     title: "Email",
-    content: `${contactConfig.email.info}\n${contactConfig.email.sales}`,
+    content: `${contactConfig.email.info}`,
     icon: <Mail className="w-6 h-6" />,
     href: formatEmailLink(contactConfig.email.info),
   },

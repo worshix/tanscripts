@@ -43,7 +43,7 @@ export const contactConfig = {
   social: {
     twitter: "https://twitter.com/zimtecheng",
     linkedin: "https://linkedin.com/company/zimtech-engineering",
-    instagram: "https://instagram.com/zimtechengineering",
+    instagram: "https://www.instagram.com/zimtech_eng/",
     github: "https://github.com/zimtech-engineering",
     facebook: "https://www.facebook.com/profile.php?id=61571170637688",
   },
