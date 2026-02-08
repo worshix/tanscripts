@@ -1,11 +1,30 @@
 import { Metadata } from "next";
 import { Mail, Sparkles } from "lucide-react";
 import BlogContent from "./BlogContent";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Blog | Zimtech Engineering",
+  title: "Blog",
   description:
-    "Explore our latest articles, case studies, product updates, and industry insights.",
+    "Explore Zimtech Engineering's latest articles, research, case studies, product updates, and industry insights on automation, embedded systems, and technology in Zimbabwe.",
+  keywords: [
+    "engineering blog Zimbabwe",
+    "industrial automation articles",
+    "technology insights Harare",
+    "embedded systems tutorials",
+    "PLC programming guides",
+    "Zimbabwe tech news",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/blog"),
+  },
+  openGraph: {
+    title: "Blog | Zimtech Engineering",
+    description:
+      "Articles, research, and industry insights on automation, embedded systems, and technology.",
+    url: `${siteConfig.url}/blog`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
 };
 
 export default function BlogPage() {

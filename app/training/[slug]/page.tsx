@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Button from "@/components/Button";
 import { courses } from "@/lib/data/training.js";
+import { siteConfig } from "@/config/site";
 import { Clock, BarChart3, DollarSign, CheckCircle, ArrowRight, Info, HelpCircle } from "lucide-react";
 
 export async function generateMetadata({
@@ -12,11 +13,30 @@ export async function generateMetadata({
   const { slug } = await params;
   const course = courses[slug];
   if (!course) {
-    return { title: "Course Not Found | Zimtech Engineering" };
+    return { title: "Course Not Found" };
   }
+  
+  const url = `${siteConfig.url}/training/${slug}`;
+  
   return {
-    title: `${course.title} | Training | Zimtech Engineering`,
+    title: course.title,
     description: course.description,
+    keywords: [course.title, "training Zimbabwe", "engineering courses Harare", "professional development"],
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${course.title} | Training | Zimtech Engineering`,
+      description: course.description,
+      url,
+      type: "website",
+      images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: course.title,
+      description: course.description,
+    },
   };
 }
 

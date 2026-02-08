@@ -3,11 +3,31 @@ import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import { Settings, Cpu, Cog, Zap, Database, FileText, CheckCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Services | Zimtech Engineering",
+  title: "Services",
   description:
-    "Explore our comprehensive engineering services including industrial automation, embedded systems, mechanical design, and more.",
+    "Explore Zimtech Engineering's comprehensive services: industrial automation, PLC programming, SCADA systems, embedded systems, mechanical design, and professional training in Zimbabwe.",
+  keywords: [
+    "industrial automation services",
+    "PLC programming Zimbabwe",
+    "SCADA system design",
+    "embedded systems development",
+    "mechanical design services",
+    "engineering consulting Harare",
+    "process control optimization",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/services"),
+  },
+  openGraph: {
+    title: "Engineering Services | Zimtech Engineering",
+    description:
+      "Industrial automation, embedded systems, mechanical design, and professional training services in Zimbabwe.",
+    url: `${siteConfig.url}/services`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
 };
 
 const services = [

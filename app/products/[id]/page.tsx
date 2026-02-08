@@ -4,6 +4,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import ProductImageGallery from "./ProductImageGallery";
 import { products } from "@/lib/data/products.js";
+import { siteConfig } from "@/config/site";
 import { 
   Cpu, 
   CheckCircle, 
@@ -43,11 +44,32 @@ export async function generateMetadata({
   const { id } = await params;
   const product = products[id];
   if (!product) {
-    return { title: "Product Not Found | Zimtech Engineering" };
+    return { title: "Product Not Found" };
   }
+  
+  const url = `${siteConfig.url}/products/${id}`;
+  
   return {
-    title: `${product.name} | Products | Zimtech Engineering`,
+    title: product.name,
     description: product.description,
+    keywords: [product.name, product.category, "Zimtech Engineering", "engineering products Zimbabwe"],
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${product.name} | Zimtech Engineering`,
+      description: product.description,
+      url,
+      type: "website",
+      images: product.images?.main 
+        ? [{ url: product.images.main, width: 800, height: 600 }]
+        : [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.description,
+    },
   };
 }
 

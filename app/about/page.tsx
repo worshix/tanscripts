@@ -2,11 +2,29 @@ import { Metadata } from "next";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import { Award, Lightbulb, Shield, Users, Target, Eye, ArrowRight, User } from "lucide-react";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "About Us | Zimtech Engineering",
+  title: "About Us",
   description:
-    "Learn about Zimtech Engineering's mission, vision, values, and the expert team behind our engineering solutions.",
+    "Learn about Zimtech Engineering's mission, vision, values, and the expert team behind Zimbabwe's leading engineering solutions company.",
+  keywords: [
+    "about Zimtech Engineering",
+    "engineering company Zimbabwe",
+    "industrial automation experts",
+    "Harare engineering team",
+    "Zimbabwe technology company",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/about"),
+  },
+  openGraph: {
+    title: "About Zimtech Engineering",
+    description:
+      "Discover the mission, vision, and expert team behind Zimbabwe's leading engineering solutions company.",
+    url: `${siteConfig.url}/about`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
 };
 
 const values = [

@@ -4,11 +4,29 @@ import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import { BarChart3, ArrowRight, TrendingUp, Award, Users, Zap } from "lucide-react";
 import { caseStudies as caseStudiesData } from "@/lib/data/case-studies.js";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Zimtech Engineering",
+  title: "Case Studies",
   description:
-    "Explore our successful projects and see how Zimtech Engineering delivers results for clients across various industries.",
+    "Explore Zimtech Engineering's successful projects and see how we deliver measurable results for clients across manufacturing, agriculture, and energy industries in Zimbabwe.",
+  keywords: [
+    "engineering case studies Zimbabwe",
+    "industrial automation projects",
+    "successful implementations Harare",
+    "automation success stories",
+    "Zimbabwe engineering projects",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/case-studies"),
+  },
+  openGraph: {
+    title: "Case Studies | Zimtech Engineering",
+    description:
+      "Successful projects and measurable results across industries in Zimbabwe.",
+    url: `${siteConfig.url}/case-studies`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
 };
 
 // Transform case studies record to array for display

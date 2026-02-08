@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FileText, Clock, ArrowRight, Sparkles, BookOpen, Newspaper, Wrench } from "lucide-react";
 import { posts as postsData } from "@/lib/data/blog.js";
+import Image from "next/image";
 
 // Transform posts record to array for display (server-rendered for SEO)
 const posts = Object.entries(postsData).map(([slug, post]) => ({

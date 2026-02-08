@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/Button";
@@ -7,6 +8,7 @@ import ProductShowcase from "@/components/ProductShowcase";
 import { products } from "@/lib/data/products.js";
 import { posts } from "@/lib/data/blog.js";
 import { caseStudies } from "@/lib/data/case-studies.js";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 import { 
   Settings, 
   Cog, 
@@ -20,6 +22,31 @@ import {
   Clock,
   Cpu
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Industrial Automation & Engineering Solutions Zimbabwe",
+  description:
+    "Zimtech Engineering delivers cutting-edge industrial automation, embedded systems, solar installations, and professional training services in Zimbabwe. Get expert engineering solutions today.",
+  keywords: [
+    "industrial automation Zimbabwe",
+    "engineering solutions Harare",
+    "PLC programming",
+    "SCADA systems",
+    "solar installation Zimbabwe",
+    "embedded systems",
+    "professional training",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/"),
+  },
+  openGraph: {
+    title: `${siteConfig.name} | Industrial Automation & Engineering Solutions`,
+    description:
+      "Cutting-edge industrial automation, embedded systems, solar installations, and professional training services in Zimbabwe.",
+    url: siteConfig.url,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
+};
 
 const services = [
   {

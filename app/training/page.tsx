@@ -3,11 +3,31 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import { Cpu, Settings, Cog, CheckCircle, ArrowRight, Award, Users, GraduationCap, BookOpen } from "lucide-react";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Training | Zimtech Engineering",
+  title: "Training",
   description:
-    "Professional training programs in PLC programming, embedded systems, and mechanical design for industrial automation.",
+    "Professional training programs in PLC programming, embedded systems, mechanical design, and industrial automation in Zimbabwe. Hands-on courses with industry experts.",
+  keywords: [
+    "PLC training Zimbabwe",
+    "industrial automation courses Harare",
+    "embedded systems training",
+    "mechanical design courses",
+    "SCADA training Zimbabwe",
+    "engineering certification",
+    "technical skills development",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/training"),
+  },
+  openGraph: {
+    title: "Professional Training | Zimtech Engineering",
+    description:
+      "PLC programming, embedded systems, and mechanical design training courses in Zimbabwe.",
+    url: `${siteConfig.url}/training`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
 };
 
 const courses = [

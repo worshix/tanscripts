@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/Button";
 import { caseStudies } from "@/lib/data/case-studies.js";
+import { siteConfig } from "@/config/site";
 import { 
   ArrowRight, 
   ArrowLeft, 
@@ -38,11 +39,31 @@ export async function generateMetadata({
   const { slug } = await params;
   const study = caseStudies[slug];
   if (!study) {
-    return { title: "Case Study Not Found | Zimtech Engineering" };
+    return { title: "Case Study Not Found" };
   }
+  
+  const url = `${siteConfig.url}/case-studies/${slug}`;
+  
   return {
-    title: `${study.title} | Case Studies | Zimtech Engineering`,
+    title: study.title,
     description: study.description,
+    keywords: [study.industry, study.client, "case study Zimbabwe", "engineering project"],
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${study.title} | Case Study | Zimtech Engineering`,
+      description: study.description,
+      url,
+      type: "article",
+      tags: study.services,
+      images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: study.title,
+      description: study.description,
+    },
   };
 }
 

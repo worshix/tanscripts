@@ -175,11 +175,6 @@ export default function SolarInstallationPage() {
     scrollToContactForm();
   };
 
-  const handleViewDetails = (product: Product) => {
-    // TODO: Could open a modal or navigate to product detail page
-    console.log("View details:", product);
-  };
-
   return (
     <>
       {/* JSON-LD Structured Data */}
@@ -380,7 +375,6 @@ export default function SolarInstallationPage() {
                 key={product.id}
                 product={product}
                 onAddToQuote={handleAddToQuote}
-                onViewDetails={handleViewDetails}
                 aosDelay={index * 50}
               />
             ))}

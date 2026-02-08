@@ -3,11 +3,30 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import { DollarSign, BookOpen, Heart, Clock, Building, Users, MapPin, ArrowRight, Briefcase } from "lucide-react";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Careers | Zimtech Engineering",
+  title: "Careers",
   description:
-    "Join our team of engineering professionals. Explore career opportunities at Zimtech Engineering.",
+    "Join Zimtech Engineering's team of engineering professionals. Explore career opportunities in industrial automation, embedded systems, and more in Zimbabwe.",
+  keywords: [
+    "engineering jobs Zimbabwe",
+    "automation engineer careers Harare",
+    "embedded systems developer jobs",
+    "mechanical engineer Zimbabwe",
+    "technology jobs Harare",
+    "engineering careers Africa",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/careers"),
+  },
+  openGraph: {
+    title: "Careers | Zimtech Engineering",
+    description:
+      "Join our team of engineering professionals. Career opportunities in Zimbabwe.",
+    url: `${siteConfig.url}/careers`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
 };
 
 interface Position {

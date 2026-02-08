@@ -2,11 +2,30 @@ import { Metadata } from "next";
 import Button from "@/components/Button";
 import { CheckCircle, ArrowRight, Cog } from "lucide-react";
 import ProductsContent from "./ProductsContent";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Products | Zimtech Engineering",
+  title: "Products",
   description:
-    "Explore our range of high-quality engineering products including controllers, automation systems, and sensor solutions.",
+    "Explore Zimtech Engineering's range of high-quality engineering products including LoRA monitoring systems, IoT solutions, controllers, and automation equipment in Zimbabwe.",
+  keywords: [
+    "engineering products Zimbabwe",
+    "LoRA monitoring systems",
+    "IoT solutions Harare",
+    "industrial automation products",
+    "sensor solutions",
+    "controllers Zimbabwe",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/products"),
+  },
+  openGraph: {
+    title: "Engineering Products | Zimtech Engineering",
+    description:
+      "High-quality LoRA monitoring systems, IoT solutions, and industrial automation products in Zimbabwe.",
+    url: `${siteConfig.url}/products`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
+  },
 };
 
 export default function ProductsPage() {

@@ -27,7 +27,8 @@ export const contactConfig = {
   // Email Addresses
   email: {
     info: "info@zimtechengineering.co.zw",
-    training:"training@zimtechengineering.co.zw"
+    sales: "sales@zimtechengineering.co.zw",
+    training: "training@zimtechengineering.co.zw",
   },
   
   // Business Hours
@@ -44,7 +45,7 @@ export const contactConfig = {
     linkedin: "https://linkedin.com/company/zimtech-engineering",
     instagram: "https://instagram.com/zimtechengineering",
     github: "https://github.com/zimtech-engineering",
-    facebook: "https://facebook.com/zimtechengineering",
+    facebook: "https://www.facebook.com/profile.php?id=61571170637688",
   },
   
   // WhatsApp Configuration

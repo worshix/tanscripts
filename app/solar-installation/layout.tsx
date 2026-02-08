@@ -1,46 +1,43 @@
 import { Metadata } from "next";
-import { contactConfig } from "@/config/contact";
-
-const siteUrl = "https://zimtechengineering.com";
+import { siteConfig, getCanonicalUrl } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: `Solar Installation | ${contactConfig.companyName}`,
-  description: `Professional solar installation services in Zimbabwe. Inverters, panels, batteries & complete packages from 1.5kVA to commercial scale. Free quotes & expert installation by ${contactConfig.companyName}.`,
+  title: "Solar Installation",
+  description:
+    "Professional solar installation services in Zimbabwe. Solar panels, inverters, batteries, and complete packages from 1.5kVA to commercial scale. Free quotes and expert installation by Zimtech Engineering.",
   keywords: [
-    "solar installation",
-    "solar panels Zimbabwe",
-    "solar inverter",
-    "solar battery",
-    "off-grid solar",
+    ...siteConfig.keywords.solar,
+    "solar installation Harare",
+    "off-grid solar Zimbabwe",
     "hybrid solar system",
-    "solar geyser",
-    "Zimtech Engineering",
-    "Harare solar",
+    "commercial solar installation",
   ],
+  alternates: {
+    canonical: getCanonicalUrl("/solar-installation"),
+  },
   openGraph: {
-    title: `Solar Installation | ${contactConfig.companyName}`,
-    description: `Professional solar installation services in Zimbabwe. Complete solar solutions from 1.5kVA to commercial scale.`,
-    url: `${siteUrl}/solar-installation`,
-    siteName: contactConfig.companyName,
+    title: "Solar Installation | Zimtech Engineering",
+    description:
+      "Professional solar installation services in Zimbabwe. Complete solar solutions from 1.5kVA to commercial scale.",
+    url: `${siteConfig.url}/solar-installation`,
+    siteName: siteConfig.name,
     images: [
       {
-        url: `${siteUrl}/images/solar/og-solar.jpg`,
+        url: "/images/solar/og-solar.jpg",
         width: 1200,
         height: 630,
         alt: "Solar Installation by Zimtech Engineering",
       },
     ],
-    locale: "en_US",
+    locale: siteConfig.locale,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `Solar Installation | ${contactConfig.companyName}`,
-    description: `Professional solar installation services in Zimbabwe. Free quotes & expert installation.`,
-    images: [`${siteUrl}/images/solar/og-solar.jpg`],
-  },
-  alternates: {
-    canonical: `${siteUrl}/solar-installation`,
+    title: "Solar Installation | Zimtech Engineering",
+    description:
+      "Professional solar installation services in Zimbabwe. Free quotes & expert installation.",
+    images: ["/images/solar/og-solar.jpg"],
   },
   robots: {
     index: true,
