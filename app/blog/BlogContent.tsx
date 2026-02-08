@@ -1,11 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import { FileText, Clock, ArrowRight, Sparkles, BookOpen, Newspaper, Wrench } from "lucide-react";
 import { posts as postsData } from "@/lib/data/blog.js";
 
-// Transform posts record to array for display
+// Transform posts record to array for display (server-rendered for SEO)
 const posts = Object.entries(postsData).map(([slug, post]) => ({
   slug,
   title: post.title,
@@ -14,9 +11,6 @@ const posts = Object.entries(postsData).map(([slug, post]) => ({
   date: post.date,
   readTime: post.readTime,
 }));
-
-// Extract unique categories from posts data
-const categories = ["All", ...Array.from(new Set(Object.values(postsData).map(p => p.category)))];
 
 // Get icon based on category
 function getCategoryIcon(category: string) {
@@ -31,47 +25,19 @@ function getCategoryIcon(category: string) {
 }
 
 export default function BlogContent() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredPosts = activeCategory === "All" 
-    ? posts 
-    : posts.filter(post => post.category === activeCategory);
+  const filteredPosts = posts; // server-rendered list for SEO; client filtering removed
 
   return (
     <>
-      {/* Category Filter */}
-      <section className="py-8 bg-background-secondary border-b border-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                  category === activeCategory
-                    ? "btn-neon text-white"
-                    : "glass-card text-foreground hover:border-primary/50"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Blog Posts */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Results count */}
           <div className="mb-8 text-foreground-muted">
-            Showing <span className="text-foreground font-semibold">{filteredPosts.length}</span> 
+            Showing <span className="text-foreground font-semibold">{filteredPosts.length}</span>
             {filteredPosts.length === 1 ? " article" : " articles"}
-            {activeCategory !== "All" && (
-              <span> in <span className="text-primary-light font-semibold">{activeCategory}</span></span>
-            )}
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => {
               const CategoryIcon = getCategoryIcon(post.category);
@@ -128,44 +94,6 @@ export default function BlogContent() {
               );
             })}
           </div>
-
-          {/* No results message */}
-          {filteredPosts.length === 0 && (
-            <div className="text-center py-16">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                <FileText className="w-8 h-8 text-primary-light" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">No articles found</h3>
-              <p className="text-foreground-muted mb-6">No articles match the selected category.</p>
-              <button
-                onClick={() => setActiveCategory("All")}
-                className="btn-neon px-6 py-2 rounded-xl text-white"
-              >
-                View All Articles
-              </button>
-            </div>
-          )}
-
-          {/* Pagination */}
-          {filteredPosts.length > 0 && (
-            <div className="flex justify-center mt-16">
-              <nav className="flex items-center gap-2">
-                <button className="px-5 py-2.5 rounded-xl border border-primary/20 text-foreground-muted cursor-not-allowed">
-                  Previous
-                </button>
-                <button className="px-5 py-2.5 rounded-xl btn-neon text-white">1</button>
-                <button className="px-5 py-2.5 rounded-xl border border-primary/20 text-foreground hover:border-primary/50 transition-colors">
-                  2
-                </button>
-                <button className="px-5 py-2.5 rounded-xl border border-primary/20 text-foreground hover:border-primary/50 transition-colors">
-                  3
-                </button>
-                <button className="px-5 py-2.5 rounded-xl border border-primary/20 text-foreground hover:border-primary/50 transition-colors">
-                  Next
-                </button>
-              </nav>
-            </div>
-          )}
         </div>
       </section>
     </>

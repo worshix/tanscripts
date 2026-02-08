@@ -318,7 +318,7 @@ export default function SolarInstallationPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/10 rounded-3xl blur-3xl" />
               <div className="relative glass-card rounded-3xl h-80 flex flex-col items-center justify-center overflow-hidden">
                 <Image
-                  src="/images/solar/installation-process.jpg"
+                  src="/images/solar.png"
                   alt="Solar installation process"
                   fill
                   className="object-cover"

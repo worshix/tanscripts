@@ -49,7 +49,7 @@ export const contactConfig = {
   
   // WhatsApp Configuration
   whatsapp: {
-    number: "263771234567", // Country code without +
+    number: "263713664345", // Country code without +
     defaultMessage: "Hello! I'm interested in learning more about Zimtech Engineering's services.",
     getLink: (message?: string) => {
       const msg = encodeURIComponent(message || contactConfig.whatsapp.defaultMessage);
