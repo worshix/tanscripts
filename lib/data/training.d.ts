@@ -9,6 +9,8 @@ export interface Course {
   prerequisites: string[];
   outline: { day: string; topics: string[] }[];
   includes: string[];
+  partner?: { name: string; description: string; address: string };
+  addOns?: string[];
 }
 
 export declare const courses: Record<string, Course>;

@@ -34,16 +34,17 @@ const courses = [
   {
     id: "plc",
     title: "PLC Training",
-    duration: "5 Days",
-    level: "Beginner to Advanced",
+    duration: "10 Days",
+    level: "Beginner to Intermediate",
     description:
-      "Comprehensive PLC programming course covering ladder logic, structured text, and industrial communication protocols.",
+      "Comprehensive PLC programming course covering ladder logic, HMI Design and SCADA Integration. Delivered in partnership with Speciss College.",
     topics: [
       "PLC fundamentals and architecture",
       "Ladder logic programming",
-      "Structured text programming",
       "HMI integration",
-      "Industrial communication protocols",
+      "SCADA Integration",
+      "Hands On Wiring",
+      "VFD Control with PLC",
       "Troubleshooting and diagnostics",
     ],
     Icon: Cpu,

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Button from "@/components/Button";
 import { courses } from "@/lib/data/training.js";
 import { siteConfig } from "@/config/site";
-import { Clock, BarChart3, DollarSign, CheckCircle, ArrowRight, Info, HelpCircle } from "lucide-react";
+import { Clock, BarChart3, DollarSign, CheckCircle, ArrowRight, Info, HelpCircle, Handshake, MapPin, Zap } from "lucide-react";
 
 export async function generateMetadata({
   params,
@@ -100,6 +100,25 @@ export default async function CourseDetailPage({
                 <p className="text-foreground-muted leading-relaxed">{course.overview}</p>
               </div>
 
+              {/* Training Partner */}
+              {course.partner && (
+                <div className="glass-card rounded-2xl p-6 flex flex-col sm:flex-row gap-5">
+                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center text-white flex-shrink-0">
+                    <Handshake className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-2 font-[family-name:var(--font-orbitron)]">
+                      Delivered in Partnership with {course.partner.name}
+                    </h3>
+                    <p className="text-foreground-muted mb-3">{course.partner.description}</p>
+                    <p className="flex items-center gap-2 text-sm text-foreground/80">
+                      <MapPin className="w-4 h-4 text-secondary flex-shrink-0" />
+                      {course.partner.address}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Objectives */}
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-6 font-[family-name:var(--font-orbitron)]">
@@ -158,6 +177,28 @@ export default async function CourseDetailPage({
                   ))}
                 </ul>
               </div>
+
+              {/* Optional Add-Ons */}
+              {course.addOns && course.addOns.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground mb-6 font-[family-name:var(--font-orbitron)]">
+                    Optional Add-Ons
+                  </h2>
+                  <p className="text-foreground-muted mb-4">
+                    The curriculum can be extended with the following modules on request:
+                  </p>
+                  <ul className="grid md:grid-cols-2 gap-4">
+                    {course.addOns.map((addOn) => (
+                      <li key={addOn} className="flex items-start gap-3 group">
+                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/40 transition-colors">
+                          <Zap className="w-4 h-4 text-primary-light" />
+                        </div>
+                        <span className="text-foreground/80">{addOn}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}

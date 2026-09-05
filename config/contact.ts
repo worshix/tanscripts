@@ -10,10 +10,10 @@ export const contactConfig = {
   
   // Address
   address: {
-    street: "P. O. Box BE 277, Belvedere, Harare",
+    street: "42 2nd Street, Warren Park 1",
     city: "Harare",
     country: "Zimbabwe",
-    full: "P. O. Box BE 277, Belvedere, Harare, Zimbabwe",
+    full: "42 2nd Street, Warren Park 1, Harare, Zimbabwe",
   },
   
   // Phone Numbers

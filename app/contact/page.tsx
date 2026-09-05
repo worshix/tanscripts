@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Button from "@/components/Button";
-import { MapPin, Phone, Clock, Send, ChevronDown, ChevronUp } from "lucide-react";
+import { MapPin, Phone, Clock, MessageCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { contactConfig, formatPhoneLink } from "@/config/contact";
 
 const contactInfo = [
@@ -33,7 +32,7 @@ const faqs = [
   {
     question: "How do I request a quote?",
     answer:
-      `You can request a quote by filling out the contact form above, calling our office, or sending an email to ${contactConfig.email.sales}.`,
+      "You can request a quote by messaging us on WhatsApp or calling our office directly — it's the fastest way to reach us.",
   },
   {
     question: "Do you offer on-site services?",
@@ -48,71 +47,7 @@ const faqs = [
 ];
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    subject: "",
-    message: "",
-  });
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message: "Thank you for your message! We'll get back to you within 24-48 hours.",
-        });
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        setSubmitStatus({
-          type: "error",
-          message: data.error || "Something went wrong. Please try again.",
-        });
-      }
-    } catch {
-      setSubmitStatus({
-        type: "error",
-        message: "Failed to send message. Please check your connection and try again.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   return (
     <>
@@ -143,177 +78,31 @@ export default function ContactPage() {
       <section className="relative py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
+            {/* WhatsApp CTA */}
             <div className="lg:col-span-2">
-              <div className="glass-card rounded-2xl p-8" data-aos="fade-right">
-                <h2 className="text-2xl font-bold text-foreground mb-8 font-[family-name:var(--font-orbitron)]">
-                  Send Us a Message
+              <div
+                className="glass-card rounded-2xl p-8 md:p-12 flex flex-col items-center text-center"
+                data-aos="fade-right"
+              >
+                <div className="w-20 h-20 rounded-2xl bg-green-500 flex items-center justify-center text-white mb-6 shadow-lg shadow-green-500/30">
+                  <MessageCircle className="w-10 h-10" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-[family-name:var(--font-orbitron)]">
+                  Chat With Us on <span className="text-gradient">WhatsApp</span>
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-background-secondary border border-primary/20 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-foreground-muted"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-background-secondary border border-primary/20 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-foreground-muted"
-                        placeholder="john@company.com"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-background-secondary border border-primary/20 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-foreground-muted"
-                        placeholder="+263 123 456 789"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="company"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Company Name
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-background-secondary border border-primary/20 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-foreground-muted"
-                        placeholder="Your Company"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-background-secondary border border-primary/20 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="quote">Request a Quote</option>
-                      <option value="services">Services Inquiry</option>
-                      <option value="products">Products Inquiry</option>
-                      <option value="training">Training Programs</option>
-                      <option value="support">Technical Support</option>
-                      <option value="careers">Career Opportunities</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-background-secondary border border-primary/20 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-foreground-muted"
-                      placeholder="Tell us about your project or inquiry..."
-                    />
-                  </div>
-
-                  {/* Status Message */}
-                  {submitStatus.type && (
-                    <div
-                      className={`p-4 rounded-xl border ${
-                        submitStatus.type === "success"
-                          ? "bg-green-500/10 border-green-500/30 text-green-400"
-                          : "bg-red-500/10 border-red-500/30 text-red-400"
-                      }`}
-                    >
-                      <p className="text-sm font-medium">{submitStatus.message}</p>
-                    </div>
-                  )}
-
-                  <Button type="submit" variant="primary" size="lg" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                      <>
-                        <svg
-                          className="animate-spin -ml-1 mr-3 h-5 w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          />
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          />
-                        </svg>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="w-5 h-5 ml-2" />
-                      </>
-                    )}
-                  </Button>
-                </form>
+                <p className="text-foreground-muted max-w-md mb-8">
+                  We respond fastest on WhatsApp. Message us directly for quotes,
+                  inquiries, or support and we&apos;ll get right back to you.
+                </p>
+                <a
+                  href={contactConfig.whatsapp.getLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 px-8 py-4 text-base tracking-wider bg-green-500 hover:bg-green-600 text-white hover:shadow-lg hover:shadow-green-500/50 hover:-translate-y-0.5"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Start WhatsApp Chat
+                </a>
               </div>
             </div>
 
