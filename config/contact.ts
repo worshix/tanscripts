@@ -18,10 +18,10 @@ export const contactConfig = {
   
   // Phone Numbers
   phone: {
-    primary: "+263 71 366 4345",
-    secondary: "+263 78 432 3921",
-    whatsapp: "+263713664345", // Without spaces for WhatsApp link
-    whatsappDisplay: "+263 71 366 4345", // Display format
+    primary: "+263 77 195 8312",
+    secondary: "+263 71 366 4345",
+    whatsapp: "+263771958312", // Without spaces for WhatsApp link
+    whatsappDisplay: "+263 77 195 8312", // Display format
   },
   
   // Email Addresses
@@ -50,7 +50,7 @@ export const contactConfig = {
   
   // WhatsApp Configuration
   whatsapp: {
-    number: "263713664345", // Country code without +
+    number: "263771958312", // Country code without +
     defaultMessage: "Hello! I'm interested in learning more about Zimtech Engineering's services.",
     getLink: (message?: string) => {
       const msg = encodeURIComponent(message || contactConfig.whatsapp.defaultMessage);

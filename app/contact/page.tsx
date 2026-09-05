@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Button from "@/components/Button";
-import { MapPin, Phone, Mail, Clock, Send, ChevronDown, ChevronUp } from "lucide-react";
-import { contactConfig, formatPhoneLink, formatEmailLink } from "@/config/contact";
+import { MapPin, Phone, Clock, Send, ChevronDown, ChevronUp } from "lucide-react";
+import { contactConfig, formatPhoneLink } from "@/config/contact";
 
 const contactInfo = [
   {
@@ -16,12 +16,6 @@ const contactInfo = [
     content: `${contactConfig.phone.primary}\n${contactConfig.phone.secondary}`,
     icon: <Phone className="w-6 h-6" />,
     href: `tel:${formatPhoneLink(contactConfig.phone.primary)}`,
-  },
-  {
-    title: "Email",
-    content: `${contactConfig.email.info}`,
-    icon: <Mail className="w-6 h-6" />,
-    href: formatEmailLink(contactConfig.email.info),
   },
   {
     title: "Hours",

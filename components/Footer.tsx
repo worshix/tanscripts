@@ -53,10 +53,6 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-primary" />
                 <span>{contactConfig.address.full}</span>
               </div>
-              <a href={formatEmailLink(contactConfig.email.info)} className="flex items-center gap-3 text-sm text-foreground-muted hover:text-primary transition-colors">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>{contactConfig.email.info}</span>
-              </a>
               <a href={`tel:${formatPhoneLink(contactConfig.phone.primary)}`} className="flex items-center gap-3 text-sm text-foreground-muted hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary" />
                 <span>{contactConfig.phone.primary}</span>
